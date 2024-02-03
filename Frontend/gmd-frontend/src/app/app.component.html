@@ -1,0 +1,21 @@
+<h1>PROVE OF CONCEPT</h1>
+
+@if (this.catFacts.length == 0) {
+  <div class="loader"></div>
+} @else {
+  <div>
+    {{this.catFacts[this.catFacts.length - 1].text}}
+  </div>
+
+  <br>
+
+  @if (this.catFacts.length === 1) {
+    <button (click)="shiftToNextFact(); simulateServerResponseTime()">
+      Load more facts!
+    </button>
+  } @else {
+    <button (click)="shiftToNextFact()">
+      Tell me more!
+    </button>
+  }
+}
