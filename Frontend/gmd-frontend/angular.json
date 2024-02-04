@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/gmd-frontend",
+            "outputPath": "C:/Projects/grim-mirth-daily/docs",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
