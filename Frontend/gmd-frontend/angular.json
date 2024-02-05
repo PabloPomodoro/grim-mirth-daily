@@ -13,7 +13,11 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "C:/Projects/grim-mirth-daily/docs",
+            "outputPath": {
+              "base": "C:/Projects/grim-mirth-daily/docs",
+              "browser": ""
+            },
+            "baseHref": "",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
