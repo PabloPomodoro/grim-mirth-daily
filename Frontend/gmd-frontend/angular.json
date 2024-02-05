@@ -17,7 +17,7 @@
               "base": "C:/Projects/grim-mirth-daily/docs",
               "browser": ""
             },
-            "baseHref": "/grim-mirth-daily/",
+            "baseHref": "",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
