@@ -1,0 +1,11 @@
+.landing-page-background {
+  background-image: linear-gradient(
+    to right bottom,
+    rgb(255, 240, 33, 0.7),
+    rgb(173, 113, 49, 0.9)
+  );
+}
+
+.icon-sun {
+  font-size: 10em;
+}

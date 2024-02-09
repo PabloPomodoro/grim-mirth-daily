@@ -1,0 +1,28 @@
+<div class="flex flex-col min-h-screen">
+
+  <header class="landing-page-background grow flex justify-center items-center">
+    <div class="flex card w-96 glass">
+      <div class="text-center"><fa-icon class="icon-sun" [icon]="faSun"></fa-icon></div>
+      <article class="card-body flex items-center">
+        <h2 class="card-title justify-center">Welcome to Grim Mirth Daily</h2>
+        <div class="w-52">
+          <p class="text-justify text-align-last">You wanna have a personalized <strong>your life in days</strong> calendar?</p>
+          <p class="text-justify text-align-last">Click the button below and after a short quiz, you're gonna get it!</p>
+        </div>
+        <div class="card-actions justify-center">
+          <button class="btn btn-warning" (click)="navigateToQA()">Let's start</button>
+        </div>
+      </article>
+    </div>
+  </header>
+
+  <footer class="landing-page-background mt-auto">
+    <span class="flex justify-center content-center">
+      <a href="https://github.com/PabloPomodoro/grim-mirth-daily">
+        <fa-icon [icon]="faCircleInfo" />
+        <span> This is an open source project - check the github repo by clicking.</span>
+      </a>
+    </span>
+  </footer>
+
+</div>

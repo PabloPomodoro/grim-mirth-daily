@@ -2,3 +2,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@layer utilities{
+  .text-align-last{
+    text-align-last: center;
+  }
+}
