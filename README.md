@@ -1,5 +1,5 @@
-﻿# grim-mirth-daily
+﻿# Grim Mirth Daily
 
-Currently in PoC Phase I
+Currently in PoC Phase
 
 A project that will help you cope with the mundane nature of our existence -> more to come.
