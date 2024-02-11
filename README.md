@@ -1,5 +1,1 @@
-﻿# grim-mirth-daily
-
-Currently in PoC Phase I
-
-A project that will help you cope with the mundane nature of our existence -> more to come.
+This branch is exclusively for the deployment of the gmd-frontend via github  pages.
