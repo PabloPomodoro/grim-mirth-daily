@@ -1,6 +1,10 @@
-import { Hono } from 'https://deno.land/x/hono@v3.4.1/mod.ts';
+import { Hono } from 'https://deno.land/x/hono@v4.0.5/mod.ts';
+import { cors } from 'https://deno.land/x/hono@v4.0.5/middleware.ts'
 
 const app = new Hono();
+
+app.use(cors({origin: 'https://grim-mirth-daily.com',}));
+
 let books = [
     'Hermann Hesse - Siddhartha',
     'Carolin Emcke - Gegen den Hass',
