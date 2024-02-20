@@ -3,7 +3,7 @@ import { cors } from 'https://deno.land/x/hono@v4.0.5/middleware.ts'
 
 const app = new Hono();
 
-app.use(cors({origin: 'https://grim-mirth-daily.com',}));
+app.use(cors({origin: 'https://grim-mirth-daily.com'}));
 
 let books = [
     'Hermann Hesse - Siddhartha',
