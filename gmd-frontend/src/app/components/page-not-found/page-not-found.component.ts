@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import {Component, inject} from '@angular/core';
+import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
   selector: 'app-page-not-found',
@@ -8,5 +9,10 @@ import { Component } from '@angular/core';
   styleUrl: './page-not-found.component.css'
 })
 export class PageNotFoundComponent {
+  private router = inject(Router);
+  private route = inject(ActivatedRoute);
 
+  gotoHome() {
+    this.router.navigate(['/welcome'], { relativeTo: this.route });
+  }
 }
