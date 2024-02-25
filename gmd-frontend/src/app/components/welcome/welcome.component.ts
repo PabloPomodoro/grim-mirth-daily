@@ -16,8 +16,8 @@ export class WelcomeComponent {
   private router = inject(Router);
   private route = inject(ActivatedRoute);
 
-  faCalendarDays = faCalendarDays;
-  faCircleInfo = faCircleInfo;
+  protected readonly faCalendarDays = faCalendarDays;
+  protected readonly faCircleInfo = faCircleInfo;
 
   navigateToQA() {
     this.router.navigate(['/qa'], { relativeTo: this.route });

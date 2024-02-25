@@ -1,8 +1,20 @@
-<div class="h-screen flex">
-  <div class="test flex justify-center items-end">
-    <div role="alert" class="flex justify-center alert">
-      <span class=" text-2xl font-bold">Looks like you found our NOT FOUND page - good job! When you're done here, feel free to click the button.</span>
-      <button class="btn btn-lg btn-error" (click)="gotoHome()">Back 2 Home</button>
+<div class="h-dvh flex justify-center items-center">
+
+  <div class="card card-compact lg:w-1/2 bg-base-100 shadow-xl">
+    <figure>
+      <img src="assets/page-not-found.png" title="image by &quot;catalyststuff&quot;" alt="An astronaut with the number 404 floating in space"/>
+    </figure>
+    <div class="card-body items-center">
+      <h2 class="card-title text-3xl">
+        GOOD JOB
+      </h2>
+      <p class="text-xl text-center">
+        Looks like you found our NOT FOUND page. <br> When you're done here, feel free to click the button.
+      </p>
+      <div class="card-actions">
+        <button class="btn btn-md btn-error font-bold" (click)="gotoHome()">Back 2 Home</button>
+      </div>
     </div>
   </div>
+
 </div>
