@@ -1,12 +1,14 @@
 <div class="flex justify-between navbar bg-base-300">
-  <button class="btn btn-ghost text-xl">{{title}}</button>
+  <button class="btn btn-ghost btn-circle avatar">
+    <img (click)="gotoHome()" class="w-10 rounded-full" src="assets/reaper.png" alt="The grim mirth reaper" title="image created by Freepik" />
+  </button>
 
   <div>
-    <img src="assets/uk_flag.png" class="w-6" alt="UK Flag" title="created by Sudowoodo" />
+    <img src="assets/uk_flag.png" class="w-6" alt="UK Flag" title="image created by Sudowoodo" />
     &nbsp;
-    <input type="checkbox" class="toggle" checked />
+    <input type="checkbox" class="toggle" (click)="switchActiveLanguage()" />
     &nbsp;
-    <img src="assets/german_flag.png" class="w-6" alt="German Flag" title="created by Sudowoodo" />
+    <img src="assets/german_flag.png" class="w-6" alt="German Flag" title="image created by Sudowoodo" />
   </div>
 </div>
 

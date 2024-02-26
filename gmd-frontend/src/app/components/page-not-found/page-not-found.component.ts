@@ -2,12 +2,14 @@ import {Component, inject} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {faCircleQuestion} from '@fortawesome/free-solid-svg-icons';
 import {FaIconComponent} from '@fortawesome/angular-fontawesome';
+import {TranslocoPipe} from '@ngneat/transloco';
 
 @Component({
   selector: 'app-page-not-found',
   standalone: true,
   imports: [
-    FaIconComponent
+    FaIconComponent,
+    TranslocoPipe
   ],
   templateUrl: './page-not-found.component.html',
   styleUrl: './page-not-found.component.css'
