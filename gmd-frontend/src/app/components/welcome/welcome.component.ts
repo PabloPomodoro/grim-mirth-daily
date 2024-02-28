@@ -2,13 +2,15 @@ import {Component, inject} from '@angular/core';
 import {FaIconComponent} from '@fortawesome/angular-fontawesome';
 import {ActivatedRoute, Router} from '@angular/router';
 import {faCircleInfo, faCalendarDays} from '@fortawesome/free-solid-svg-icons';
+import {TranslocoPipe} from '@ngneat/transloco';
 
 @Component({
   selector: 'app-welcome',
   standalone: true,
-    imports: [
-        FaIconComponent
-    ],
+  imports: [
+    FaIconComponent,
+    TranslocoPipe
+  ],
   templateUrl: './welcome.component.html',
   styleUrl: './welcome.component.css'
 })

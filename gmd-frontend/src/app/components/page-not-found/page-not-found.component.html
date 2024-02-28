@@ -1,18 +1,20 @@
-<div class="h-dvh flex justify-center items-center">
+<div class="h-[calc(100vh-64px)] flex justify-center items-center">
 
-  <div class="card card-compact lg:w-1/2 bg-base-100 shadow-xl">
+  <div class="card card-compact lg:w-2/5 bg-base-100 shadow-xl">
     <figure>
-      <img src="assets/page-not-found.png" title="image by &quot;catalyststuff&quot;" alt="An astronaut with the number 404 floating in space"/>
+      <img src="assets/page-not-found.png" title="{{ 'notFound.imageTitle' | transloco }}" alt="{{ 'notFound.imageAlt' | transloco }}"/>
     </figure>
     <div class="card-body items-center">
       <h2 class="card-title text-3xl">
-        GOOD JOB
+        {{ 'notFound.header' | transloco }}
       </h2>
       <p class="text-xl text-center">
-        Looks like you found our NOT FOUND page. <br> When you're done here, feel free to click the button.
+        {{ 'notFound.textOne' | transloco }}
+        <br>
+        {{ 'notFound.textTwo' | transloco }}
       </p>
       <div class="card-actions">
-        <button class="btn btn-md btn-error font-bold" (click)="gotoHome()">Back 2 Home</button>
+        <button class="btn btn-md btn-error font-bold" (click)="gotoHome()">{{ 'notFound.button' | transloco }}</button>
       </div>
     </div>
   </div>

@@ -1,5 +1,6 @@
-import {Component} from '@angular/core';
-import {RouterOutlet} from '@angular/router';
+import {Component, inject} from '@angular/core';
+import {ActivatedRoute, Router, RouterOutlet} from '@angular/router';
+import {TranslocoService} from '@ngneat/transloco';
 
 @Component({
   selector: 'app-root',
@@ -9,5 +10,19 @@ import {RouterOutlet} from '@angular/router';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  public title = "gmd-frontend";
+  public title = "GMD";
+  private isDefaultLanguage = true;
+  private languageService = inject(TranslocoService);
+
+  private router = inject(Router);
+  private route = inject(ActivatedRoute);
+
+  switchActiveLanguage() {
+    this.isDefaultLanguage = !this.isDefaultLanguage;
+    this.languageService.setActiveLang(this.isDefaultLanguage ? 'en' : 'de');
+  }
+
+  gotoHome() {
+    this.router.navigate(['/welcome'], { relativeTo: this.route });
+  }
 }

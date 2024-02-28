@@ -1,4 +1,4 @@
-<div class="h-dvh flex flex-col">
+<div class="h-[calc(100vh-64px)] flex flex-col">
 
   <div class="flex justify-center items-center grow hero bg-base-200" style="background-image: url('/assets/mountains.png');">
     <div class="hero-content flex-col lg:flex-row-reverse">
@@ -6,11 +6,11 @@
       <div class="text-center">
         <h1 class="text-5xl font-bold">Grim Mirth Daily</h1>
         <div class="py-6 ms-8 me-8 w-80">
-          <p class="text-xl">Want to have a personalized</p>
-          <p class="text-xl"><strong>your life in days</strong>&nbsp;<fa-icon [icon]="faCalendarDays" />?</p>
-          <p class="text-xl">Click the button and after a short quiz, you will get one!</p>
+          <p class="text-xl">{{ 'welcome.card.one' | transloco }}</p>
+          <p class="text-xl"><strong>{{ 'welcome.card.two' | transloco }}</strong>&nbsp;<fa-icon [icon]="faCalendarDays" />?</p>
+          <p class="text-xl">{{ 'welcome.card.three' | transloco }}</p>
         </div>
-        <button class="btn btn-warning" (click)="navigateToQA()">Let's start</button>
+        <button class="btn btn-warning" (click)="navigateToQA()">{{ 'welcome.card.button' | transloco }}</button>
       </div>
     </div>
   </div>
@@ -19,7 +19,7 @@
     <aside>
       <a href="https://github.com/PabloPomodoro/grim-mirth-daily">
         <fa-icon [icon]="faCircleInfo" />
-        <span> This is an open source project - check the github repo by clicking.</span>
+        <span> {{ 'welcome.footer' | transloco }}</span>
       </a>
     </aside>
   </footer>
