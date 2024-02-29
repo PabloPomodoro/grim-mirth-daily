@@ -1,33 +1,33 @@
-import { Hono } from 'https://deno.land/x/hono/mod.ts';
-import { cors } from 'https://deno.land/x/hono/middleware.ts'
+import {Hono} from 'https://deno.land/x/hono/mod.ts';
+import {cors} from 'https://deno.land/x/hono/middleware.ts';
 
 const app = new Hono();
 
 app.use(cors({origin: 'https://www.grim-mirth-daily.com'}));
 
 let books = [
-    'Hermann Hesse - Siddhartha',
-    'Carolin Emcke - Gegen den Hass',
-    'A. J. Jacobs - Saufit',
-    'Terry Pratchett - Nur du hast den Schlüssel'
+  'Hermann Hesse - Siddhartha',
+  'Carolin Emcke - Gegen den Hass',
+  'A. J. Jacobs - Saufit',
+  'A. J. Jacobs - Saufit',
+  'Terry Pratchett - Nur du hast den Schlüssel',
 ];
 
-
 // Redirect root URL
-app.get("/", (c) => c.redirect("/books"));
+app.get('/', (c) => c.redirect('/books'));
 
 // List all books
-app.get("/books", async (c) => {
-    return c.json(books);
+app.get('/books', async (c) => {
+  return c.json(books);
 });
 
 // Create a book (POST body is JSON)
-app.post("/books", async (c) => {
-    const jsonResponse = await c.req.json();
-    const jsonResponseValue = jsonResponse.value;
+app.post('/books', async (c) => {
+  const jsonResponse = await c.req.json();
+  const jsonResponseValue = jsonResponse.value;
 
-    books.push(jsonResponseValue);
-    return c.json(books);
+  books.push(jsonResponseValue);
+  return c.json(books);
 });
 
 /*// Get a book by title
