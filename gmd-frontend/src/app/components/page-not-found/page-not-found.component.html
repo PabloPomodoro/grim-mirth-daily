@@ -2,9 +2,9 @@
   <div class="card card-compact lg:w-2/5 bg-base-100 shadow-xl">
     <figure>
       <img
+        alt="{{ 'notFound.imageAlt' | transloco }}"
         src="assets/page-not-found.png"
         title="{{ 'notFound.imageTitle' | transloco }}"
-        alt="{{ 'notFound.imageAlt' | transloco }}"
       />
     </figure>
     <div class="card-body items-center">
@@ -13,11 +13,12 @@
       </h2>
       <p class="text-xl text-center">
         {{ 'notFound.textOne' | transloco }}
-        <br />
+        <!-- prettier-ignore -->
+        <br>
         {{ 'notFound.textTwo' | transloco }}
       </p>
       <div class="card-actions">
-        <button class="btn btn-md btn-error font-bold" (click)="gotoHome()">
+        <button (click)="gotoHome()" class="btn btn-md btn-error font-bold">
           {{ 'notFound.button' | transloco }}
         </button>
       </div>
