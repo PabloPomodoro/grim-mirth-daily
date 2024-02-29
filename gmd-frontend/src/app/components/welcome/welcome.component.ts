@@ -7,12 +7,9 @@ import {TranslocoPipe} from '@ngneat/transloco';
 @Component({
   selector: 'app-welcome',
   standalone: true,
-  imports: [
-    FaIconComponent,
-    TranslocoPipe
-  ],
+  imports: [FaIconComponent, TranslocoPipe],
   templateUrl: './welcome.component.html',
-  styleUrl: './welcome.component.css'
+  styleUrl: './welcome.component.css',
 })
 export class WelcomeComponent {
   private router = inject(Router);
@@ -22,6 +19,6 @@ export class WelcomeComponent {
   protected readonly faCircleInfo = faCircleInfo;
 
   navigateToQA() {
-    this.router.navigate(['/qa'], { relativeTo: this.route });
+    this.router.navigate(['/qa'], {relativeTo: this.route});
   }
 }

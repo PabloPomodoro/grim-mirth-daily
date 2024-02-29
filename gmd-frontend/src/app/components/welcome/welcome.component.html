@@ -1,21 +1,34 @@
 <div class="h-[calc(100vh-64px)] flex flex-col">
-
-  <div class="flex justify-center items-center grow hero bg-base-200" style="background-image: url('/assets/mountains.png');">
+  <div
+    class="flex justify-center items-center grow hero bg-base-200"
+    style="background-image: url('/assets/mountains.png')"
+  >
     <div class="hero-content flex-col lg:flex-row-reverse">
-      <img src="/assets/autumn.png" alt="A cartoon image of autumn trees and a parkbench" class="max-w-sm rounded-lg shadow-2xl" />
+      <img
+        src="/assets/autumn.png"
+        alt="A cartoon image of autumn trees and a parkbench"
+        class="max-w-sm rounded-lg shadow-2xl"
+      />
       <div class="text-center">
         <h1 class="text-5xl font-bold">Grim Mirth Daily</h1>
         <div class="py-6 ms-8 me-8 w-80">
           <p class="text-xl">{{ 'welcome.card.one' | transloco }}</p>
-          <p class="text-xl"><strong>{{ 'welcome.card.two' | transloco }}</strong>&nbsp;<fa-icon [icon]="faCalendarDays" />?</p>
+          <p class="text-xl">
+            <strong>{{ 'welcome.card.two' | transloco }}</strong
+            >&nbsp;<fa-icon [icon]="faCalendarDays" />?
+          </p>
           <p class="text-xl">{{ 'welcome.card.three' | transloco }}</p>
         </div>
-        <button class="btn btn-warning" (click)="navigateToQA()">{{ 'welcome.card.button' | transloco }}</button>
+        <button class="btn btn-warning" (click)="navigateToQA()">
+          {{ 'welcome.card.button' | transloco }}
+        </button>
       </div>
     </div>
   </div>
 
-  <footer class="flex justify-center items-center footer footer-center p-4 bg-base-300 text-base-content">
+  <footer
+    class="flex justify-center items-center footer footer-center p-4 bg-base-300 text-base-content"
+  >
     <aside>
       <a href="https://github.com/PabloPomodoro/grim-mirth-daily">
         <fa-icon [icon]="faCircleInfo" />
@@ -23,5 +36,4 @@
       </a>
     </aside>
   </footer>
-
 </div>

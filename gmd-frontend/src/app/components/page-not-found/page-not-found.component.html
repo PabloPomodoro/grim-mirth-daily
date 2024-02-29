@@ -1,8 +1,11 @@
 <div class="h-[calc(100vh-64px)] flex justify-center items-center">
-
   <div class="card card-compact lg:w-2/5 bg-base-100 shadow-xl">
     <figure>
-      <img src="assets/page-not-found.png" title="{{ 'notFound.imageTitle' | transloco }}" alt="{{ 'notFound.imageAlt' | transloco }}"/>
+      <img
+        src="assets/page-not-found.png"
+        title="{{ 'notFound.imageTitle' | transloco }}"
+        alt="{{ 'notFound.imageAlt' | transloco }}"
+      />
     </figure>
     <div class="card-body items-center">
       <h2 class="card-title text-3xl">
@@ -10,13 +13,14 @@
       </h2>
       <p class="text-xl text-center">
         {{ 'notFound.textOne' | transloco }}
-        <br>
+        <br />
         {{ 'notFound.textTwo' | transloco }}
       </p>
       <div class="card-actions">
-        <button class="btn btn-md btn-error font-bold" (click)="gotoHome()">{{ 'notFound.button' | transloco }}</button>
+        <button class="btn btn-md btn-error font-bold" (click)="gotoHome()">
+          {{ 'notFound.button' | transloco }}
+        </button>
       </div>
     </div>
   </div>
-
 </div>

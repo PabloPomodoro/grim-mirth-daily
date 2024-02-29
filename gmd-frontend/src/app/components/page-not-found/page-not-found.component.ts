@@ -5,17 +5,15 @@ import {TranslocoPipe} from '@ngneat/transloco';
 @Component({
   selector: 'app-page-not-found',
   standalone: true,
-  imports: [
-    TranslocoPipe
-  ],
+  imports: [TranslocoPipe],
   templateUrl: './page-not-found.component.html',
-  styleUrl: './page-not-found.component.css'
+  styleUrl: './page-not-found.component.css',
 })
 export class PageNotFoundComponent {
   private router = inject(Router);
   private route = inject(ActivatedRoute);
 
   gotoHome() {
-    this.router.navigate(['/welcome'], { relativeTo: this.route });
+    this.router.navigate(['/welcome'], {relativeTo: this.route});
   }
 }

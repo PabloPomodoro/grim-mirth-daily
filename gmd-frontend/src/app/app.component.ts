@@ -7,10 +7,10 @@ import {TranslocoService} from '@ngneat/transloco';
   standalone: true,
   imports: [RouterOutlet],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrl: './app.component.css',
 })
 export class AppComponent {
-  public title = "GMD";
+  public title = 'GMD';
   private isDefaultLanguage = true;
   private languageService = inject(TranslocoService);
 
@@ -23,6 +23,6 @@ export class AppComponent {
   }
 
   gotoHome() {
-    this.router.navigate(['/welcome'], { relativeTo: this.route });
+    this.router.navigate(['/welcome'], {relativeTo: this.route});
   }
 }

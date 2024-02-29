@@ -6,11 +6,9 @@ import {AsyncPipe} from '@angular/common';
 @Component({
   selector: 'app-question-answer',
   standalone: true,
-  imports: [
-    AsyncPipe
-  ],
+  imports: [AsyncPipe],
   templateUrl: './question-answer.component.html',
-  styleUrl: './question-answer.component.css'
+  styleUrl: './question-answer.component.css',
 })
 export class QuestionAnswerComponent {
   denoService = inject(DenoService);
