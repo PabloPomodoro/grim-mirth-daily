@@ -1,9 +1,44 @@
-<div class="h-screen flex justify-center items-center">
-  <div class="chat-start">
-    <div class="chat-bubble size-80">
-      @for (book of books$ | async; track book) {
-        <div class="text-2xl text-center">{{ book }}</div>
-        <br />
+<div class="h-[calc(100vh-64px)] flex flex-col items-center">
+  <div class="artboard phone-3 mt-6 pt-2 glass rounded-2xl px-2">
+    <div class="chat chat-start">
+      @if (this.steps[0]) {
+        <div class="chat-image avatar">
+          <div class="w-10 rounded-full">
+            <img
+              alt="Tailwind CSS chat bubble component"
+              src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"
+            />
+          </div>
+        </div>
+        <div class="chat-header">
+          Obi-Wan Kenobi
+          <time class="text-xs opacity-50">12:45</time>
+        </div>
+        <div class="chat-bubble">You were the Chosen One!</div>
+        <div class="chat-footer opacity-50">Delivered</div>
+      } @else {
+        <span class="loading loading-dots loading-sm"></span>
+      }
+    </div>
+
+    <div class="chat chat-end">
+      @if (this.steps[1]) {
+        <div class="chat-image avatar">
+          <div class="w-10 rounded-full">
+            <img
+              alt="Tailwind CSS chat bubble component"
+              src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"
+            />
+          </div>
+        </div>
+        <div class="chat-header">
+          Anakin
+          <time class="text-xs opacity-50">12:46</time>
+        </div>
+        <div class="chat-bubble">I hate you!</div>
+        <div class="chat-footer opacity-50">Seen at 12:46</div>
+      } @else {
+        <span class="loading loading-dots loading-sm"></span>
       }
     </div>
   </div>

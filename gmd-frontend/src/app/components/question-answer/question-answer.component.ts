@@ -1,20 +1,21 @@
-import {Component, inject} from '@angular/core';
-import {DenoService} from '../../services/deno.service';
-import {Observable} from 'rxjs';
-import {AsyncPipe} from '@angular/common';
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'app-question-answer',
   standalone: true,
-  imports: [AsyncPipe],
+  imports: [],
   templateUrl: './question-answer.component.html',
   styleUrl: './question-answer.component.css',
 })
 export class QuestionAnswerComponent {
-  denoService = inject(DenoService);
-  books$: Observable<string[]>;
+  steps = new Array(2).fill(false);
 
   constructor() {
-    this.books$ = this.denoService.getBooks();
+    setTimeout(() => {
+      this.steps[0] = true;
+    }, 2000);
+    setTimeout(() => {
+      this.steps[1] = true;
+    }, 4000);
   }
 }
