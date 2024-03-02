@@ -1,9 +1,27 @@
-import {Component} from '@angular/core';
+import {
+  Component,
+  Directive,
+  OnInit,
+  ElementRef
+} from '@angular/core';
+import {TranslocoPipe} from '@ngneat/transloco';
+
+@Directive({
+  standalone: true,
+  selector: '[appAutoFocus]',
+})
+export class AutoFocus implements OnInit {
+  constructor(private elementRef: ElementRef) {}
+
+  ngOnInit(): void {
+    this.elementRef.nativeElement.focus();
+  }
+}
 
 @Component({
   selector: 'app-question-answer',
   standalone: true,
-  imports: [],
+  imports: [TranslocoPipe, AutoFocus],
   templateUrl: './question-answer.component.html',
   styleUrl: './question-answer.component.css',
 })
@@ -13,9 +31,6 @@ export class QuestionAnswerComponent {
   constructor() {
     setTimeout(() => {
       this.steps[0] = true;
-    }, 2000);
-    setTimeout(() => {
-      this.steps[1] = true;
-    }, 4000);
+    }, 1500);
   }
 }

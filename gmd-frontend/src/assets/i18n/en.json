@@ -15,5 +15,9 @@
     "textOne": "Looks like you found our NOT FOUND page.",
     "textTwo": "When you're done here, feel free to click the button.",
     "button": "Back 2 Home"
+  },
+  "qa": {
+    "hi": "Hello, what's your name?",
+    "save": "Save"
   }
 }
