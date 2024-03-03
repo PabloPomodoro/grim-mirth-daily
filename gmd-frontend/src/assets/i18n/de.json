@@ -20,7 +20,7 @@
     "hi": "Hallo, wie ist dein Name?",
     "save": "Speichern",
     "dateOfBirth": "Und wann ist dein Geburtstag?",
-    "generateCalendarDialog": "",
-    "generateCalendar": ""
+    "generateCalendarDialog": "Großartig! Jetzt ist alles bereit, um deinen persönlichen Kalendar zu erstellen - klick den button und die Magie nimmt ihren Lauf.",
+    "generateCalendar": "Persönlichen Kalendar erstellen"
   }
 }

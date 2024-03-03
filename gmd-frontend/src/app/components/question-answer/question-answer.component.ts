@@ -50,7 +50,6 @@ export class QuestionAnswerComponent {
   user: User;
 
   constructor() {
-    // empty initialization
     this.user = new User('', new Date());
 
     setTimeout(() => {
@@ -64,14 +63,17 @@ export class QuestionAnswerComponent {
     }, 1000);
   }
 
-  setStepId(id: number) {
-    this.steps[id] = true;
-    setTimeout(() => {
-      this.unsetStepId(id);
-      this.steps[3] = true;
-    }, 1500);
+  startNextStepLoadingFollowByChat(id: number) {
+    if (this.steps.slice(id).every(item => !item)) {
+      this.steps[id] = true;
+      setTimeout(() => {
+        this.steps[id] = false;
+        this.steps[id + 1] = true;
+      }, 1500);
+    }
   }
-  unsetStepId(id: number) {
-    this.steps[id] = false;
+
+  gotoCalendarPage() {
+
   }
 }

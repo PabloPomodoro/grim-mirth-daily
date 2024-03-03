@@ -1,5 +1,5 @@
 <div class="h-[calc(100vh-64px)] flex flex-col items-center">
-  <div class="artboard phone-3 lg:mt-6 mt-2 pt-2 glass rounded-2xl px-2">
+  <div class="artboard phone-3 lg:mt-6 mt-2 pt-2 glass rounded-2xl px-2 items-center">
     <div class="chat chat-start">
       @if (!this.steps[0]) {
         <div class="chat-bubble">
@@ -19,6 +19,7 @@
         <div class="chat-bubble">{{ 'qa.hi' | transloco }}</div>
       }
     </div>
+
     @if (this.steps[1]) {
       <div class="chat chat-end">
         <input
@@ -26,9 +27,16 @@
           id="nameInput"
           class="input w-50 mt-2"
           type="text"
+          [maxlength]="20"
+          (keydown.enter)="startNextStepLoadingFollowByChat(2)"
           [(ngModel)]="user.name"
         />
-        <button class="btn btn-active" (click)="setStepId(2)">{{ 'qa.save' | transloco }}</button>
+        <button
+          class="btn btn-active"
+          (click)="startNextStepLoadingFollowByChat(2)"
+        >
+          {{ 'qa.save' | transloco }}
+        </button>
       </div>
     }
 
@@ -50,11 +58,12 @@
         </div>
         <div class="chat-header">Grim Mirther</div>
         <div class="chat-bubble">
-          Hi, {{user.name}}
+          Hi, {{ user.name }}.
           {{ 'qa.dateOfBirth' | transloco }}
         </div>
       }
     </div>
+
     @if (this.steps[4]) {
       <div class="chat chat-end">
         <input
@@ -62,10 +71,49 @@
           id="dateOfBirth"
           class="input w-50 mt-2"
           type="date"
+          (keydown.enter)="startNextStepLoadingFollowByChat(5)"
           [(ngModel)]="user.dateOfBirth"
         />
-        <button class="btn btn-active">{{ 'qa.save' | transloco }}</button>
+        <button
+          class="btn btn-active"
+          (click)="startNextStepLoadingFollowByChat(5)"
+        >
+          {{ 'qa.save' | transloco }}
+        </button>
       </div>
+    }
+
+    <div class="chat chat-start">
+      @if (this.steps[5]) {
+        <div class="chat-bubble">
+          <span class="loading loading-dots loading-sm align-bottom"></span>
+        </div>
+      }
+      @if (this.steps[6]) {
+        <div
+          appStartNextStep="7"
+          (startNextStepEvent)="startCountdownToNextStep($event)"
+          class="chat-image avatar"
+        >
+          <div class="w-10 rounded-full">
+            <img alt="The grim mirther avatar" src="assets/reaper.png" />
+          </div>
+        </div>
+        <div class="chat-header">Grim Mirther</div>
+        <div class="chat-bubble">
+          {{ 'qa.generateCalendarDialog' | transloco }}
+        </div>
+      }
+    </div>
+
+
+    @if (this.steps[6]) {
+      <button
+        class="btn btn-active mt-2 w-full"
+        (click)="gotoCalendarPage()"
+      >
+        {{ 'qa.generateCalendar' | transloco }}
+      </button>
     }
   </div>
 </div>
