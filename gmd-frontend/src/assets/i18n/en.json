@@ -18,6 +18,9 @@
   },
   "qa": {
     "hi": "Hello, what's your name?",
-    "save": "Save"
+    "save": "Save",
+    "dateOfBirth": "And what is you Date of Birth?",
+    "generateCalendarDialog": "",
+    "generateCalendar": ""
   }
 }

@@ -18,6 +18,9 @@
   },
   "qa": {
     "hi": "Hallo, wie ist dein Name?",
-    "save": "Speichern"
+    "save": "Speichern",
+    "dateOfBirth": "Und wann ist dein Geburtstag?",
+    "generateCalendarDialog": "",
+    "generateCalendar": ""
   }
 }

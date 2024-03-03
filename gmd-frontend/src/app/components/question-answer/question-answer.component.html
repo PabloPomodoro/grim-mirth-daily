@@ -6,7 +6,11 @@
           <span class="loading loading-dots loading-sm align-bottom"></span>
         </div>
       } @else {
-        <div class="chat-image avatar">
+        <div
+          appStartNextStep="1"
+          (startNextStepEvent)="startCountdownToNextStep($event)"
+          class="chat-image avatar"
+        >
           <div class="w-10 rounded-full">
             <img alt="The grim mirther avatar" src="assets/reaper.png" />
           </div>
@@ -15,9 +19,51 @@
         <div class="chat-bubble">{{ 'qa.hi' | transloco }}</div>
       }
     </div>
-    @if (this.steps[0]) {
+    @if (this.steps[1]) {
       <div class="chat chat-end">
-        <input appAutoFocus id="nameInput" class="input w-50 mt-2" type="text" />
+        <input
+          appAutoFocus
+          id="nameInput"
+          class="input w-50 mt-2"
+          type="text"
+          [(ngModel)]="user.name"
+        />
+        <button class="btn btn-active" (click)="setStepId(2)">{{ 'qa.save' | transloco }}</button>
+      </div>
+    }
+
+    <div class="chat chat-start">
+      @if (this.steps[2]) {
+        <div class="chat-bubble">
+          <span class="loading loading-dots loading-sm align-bottom"></span>
+        </div>
+      }
+      @if (this.steps[3]) {
+        <div
+          appStartNextStep="4"
+          (startNextStepEvent)="startCountdownToNextStep($event)"
+          class="chat-image avatar"
+        >
+          <div class="w-10 rounded-full">
+            <img alt="The grim mirther avatar" src="assets/reaper.png" />
+          </div>
+        </div>
+        <div class="chat-header">Grim Mirther</div>
+        <div class="chat-bubble">
+          Hi, {{user.name}}
+          {{ 'qa.dateOfBirth' | transloco }}
+        </div>
+      }
+    </div>
+    @if (this.steps[4]) {
+      <div class="chat chat-end">
+        <input
+          appAutoFocus
+          id="dateOfBirth"
+          class="input w-50 mt-2"
+          type="date"
+          [(ngModel)]="user.dateOfBirth"
+        />
         <button class="btn btn-active">{{ 'qa.save' | transloco }}</button>
       </div>
     }
