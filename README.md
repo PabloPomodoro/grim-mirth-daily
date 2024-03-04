@@ -1,9 +1,9 @@
 ﻿# Grim Mirth Daily
 <img src="readme-assets/welcome_screen.png" alt="Grim Mirth Daily home screen">
 
-﻿# Roadmap
+# Roadmap
 
-PoC (x): Technical setup (frontend <-> backend communication)
+PoC (x): Technical setup (frontend <-> backend communication) <br>
 V1 (*): TBD
 
 
