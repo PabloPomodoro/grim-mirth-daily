@@ -15,7 +15,7 @@ import {FormsModule} from '@angular/forms';
   standalone: true,
   selector: '[appAutoFocus]',
 })
-export class AutoFocus implements OnInit {
+export class AutoFocusDirective implements OnInit {
   constructor(private elementRef: ElementRef) {}
 
   ngOnInit(): void {
@@ -27,7 +27,7 @@ export class AutoFocus implements OnInit {
   standalone: true,
   selector: '[appStartNextStep]',
 })
-export class StartNextStep implements OnInit {
+export class StartNextStepDirective implements OnInit {
   @Input('appStartNextStep') nextStepId!: string;
   @Output() startNextStepEvent = new EventEmitter();
 
@@ -39,12 +39,12 @@ export class StartNextStep implements OnInit {
 @Component({
   selector: 'app-question-answer',
   standalone: true,
-  imports: [TranslocoPipe, AutoFocus, FormsModule, StartNextStep],
+  imports: [TranslocoPipe, AutoFocusDirective, FormsModule, StartNextStepDirective],
   templateUrl: './question-answer.component.html',
   styleUrl: './question-answer.component.css',
 })
 export class QuestionAnswerComponent {
-  steps = Array.from({length: 7}, (_) => false);
+  steps = Array.from({length: 7}, () => false);
   user: User;
 
   constructor() {
