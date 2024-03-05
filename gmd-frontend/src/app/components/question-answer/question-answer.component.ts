@@ -39,7 +39,12 @@ export class StartNextStepDirective implements OnInit {
 @Component({
   selector: 'app-question-answer',
   standalone: true,
-  imports: [TranslocoPipe, AutoFocusDirective, FormsModule, StartNextStepDirective],
+  imports: [
+    TranslocoPipe,
+    AutoFocusDirective,
+    FormsModule,
+    StartNextStepDirective,
+  ],
   templateUrl: './question-answer.component.html',
   styleUrl: './question-answer.component.css',
 })
