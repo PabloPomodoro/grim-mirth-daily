@@ -44,7 +44,7 @@ export class StartNextStep implements OnInit {
   styleUrl: './question-answer.component.css',
 })
 export class QuestionAnswerComponent {
-  steps = Array.from({length: 7}, _ => false);
+  steps = Array.from({length: 7}, (_) => false);
   user: User;
 
   constructor() {
