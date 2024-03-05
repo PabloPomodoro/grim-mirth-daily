@@ -5,9 +5,7 @@ import {
   ElementRef,
   EventEmitter,
   Input,
-  inject,
   Output,
-  AfterViewInit,
 } from '@angular/core';
 import {TranslocoPipe} from '@ngneat/transloco';
 import {User} from '../../models/user.model';
@@ -46,7 +44,7 @@ export class StartNextStep implements OnInit {
   styleUrl: './question-answer.component.css',
 })
 export class QuestionAnswerComponent {
-  steps = new Array(4).fill(false);
+  steps = Array.from({length: 7}, _ => false);
   user: User;
 
   constructor() {
@@ -64,7 +62,7 @@ export class QuestionAnswerComponent {
   }
 
   startNextStepLoadingFollowByChat(id: number) {
-    if (this.steps.slice(id).every(item => !item)) {
+    if (this.steps.slice(id).every((item) => !item)) {
       this.steps[id] = true;
       setTimeout(() => {
         this.steps[id] = false;
@@ -73,7 +71,12 @@ export class QuestionAnswerComponent {
     }
   }
 
-  gotoCalendarPage() {
-
+  validDateOfBirth(value: string) {
+    return value.length > 0 && new Date(this.user.dateOfBirth) <= new Date();
   }
+
+  gotoCalendarPage() {}
+
+  // TODO: remove as soon as calendar page is ready
+  protected readonly alert = alert;
 }

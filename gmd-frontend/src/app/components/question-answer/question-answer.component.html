@@ -1,7 +1,9 @@
 <div class="h-[calc(100vh-64px)] flex flex-col items-center">
-  <div class="artboard phone-3 lg:mt-6 mt-2 pt-2 glass rounded-2xl px-2 items-center">
+  <div
+    class="artboard phone-3 lg:mt-6 mt-2 pt-2 glass rounded-2xl px-2 items-center"
+  >
     <div class="chat chat-start">
-      @if (!this.steps[0]) {
+      @if (!this.steps[0].valueOf()) {
         <div class="chat-bubble">
           <span class="loading loading-dots loading-sm align-bottom"></span>
         </div>
@@ -20,33 +22,44 @@
       }
     </div>
 
-    @if (this.steps[1]) {
+    @if (this.steps[1].valueOf()) {
       <div class="chat chat-end">
         <input
           appAutoFocus
           id="nameInput"
           class="input w-50 mt-2"
           type="text"
+          [minlength]="1"
           [maxlength]="20"
           (keydown.enter)="startNextStepLoadingFollowByChat(2)"
           [(ngModel)]="user.name"
+          [disabled]="this.steps[3].valueOf()"
         />
         <button
           class="btn btn-active"
+          [disabled]="user.name.length < 1"
           (click)="startNextStepLoadingFollowByChat(2)"
         >
           {{ 'qa.save' | transloco }}
         </button>
+
+        @if (this.user.name.length < 1) {
+          <span class="ml-20 mt-1">
+            <p class="text-sm text-red-700 text-right">
+              {{ 'qa.minLength' | transloco }}
+            </p>
+          </span>
+        }
       </div>
     }
 
     <div class="chat chat-start">
-      @if (this.steps[2]) {
+      @if (this.steps[2].valueOf()) {
         <div class="chat-bubble">
           <span class="loading loading-dots loading-sm align-bottom"></span>
         </div>
       }
-      @if (this.steps[3]) {
+      @if (this.steps[3].valueOf()) {
         <div
           appStartNextStep="4"
           (startNextStepEvent)="startCountdownToNextStep($event)"
@@ -64,32 +77,42 @@
       }
     </div>
 
-    @if (this.steps[4]) {
+    @if (this.steps[4].valueOf()) {
       <div class="chat chat-end">
         <input
+          #dateOfBirthInput
           appAutoFocus
           id="dateOfBirth"
           class="input w-50 mt-2"
           type="date"
           (keydown.enter)="startNextStepLoadingFollowByChat(5)"
           [(ngModel)]="user.dateOfBirth"
+          [disabled]="this.steps[6].valueOf()"
         />
         <button
           class="btn btn-active"
+          [disabled]="!validDateOfBirth(dateOfBirthInput.value)"
           (click)="startNextStepLoadingFollowByChat(5)"
         >
           {{ 'qa.save' | transloco }}
         </button>
+        @if (!validDateOfBirth(dateOfBirthInput.value)) {
+          <span class="ml-36 mt-1">
+            <p class="text-sm text-red-700 text-right">
+              {{ 'qa.minDate' | transloco }}
+            </p>
+          </span>
+        }
       </div>
     }
 
     <div class="chat chat-start">
-      @if (this.steps[5]) {
+      @if (this.steps[5].valueOf()) {
         <div class="chat-bubble">
           <span class="loading loading-dots loading-sm align-bottom"></span>
         </div>
       }
-      @if (this.steps[6]) {
+      @if (this.steps[6].valueOf()) {
         <div
           appStartNextStep="7"
           (startNextStepEvent)="startCountdownToNextStep($event)"
@@ -106,11 +129,10 @@
       }
     </div>
 
-
-    @if (this.steps[6]) {
+    @if (this.steps[6].valueOf()) {
       <button
         class="btn btn-active mt-2 w-full"
-        (click)="gotoCalendarPage()"
+        (click)="alert('At least soon it will :)')"
       >
         {{ 'qa.generateCalendar' | transloco }}
       </button>

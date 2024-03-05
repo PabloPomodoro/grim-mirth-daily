@@ -19,6 +19,8 @@
   "qa": {
     "hi": "Hello, what's your name?",
     "save": "Save",
+    "minLength": "Your name needs to be at least one character!",
+    "minDate": "Your date of birth can only be today or in the past!",
     "dateOfBirth": "And what is you Date of Birth?",
     "generateCalendarDialog": "Great! Now everything is in place to generate your personal calendar - click the button below and the magic starts.",
     "generateCalendar": "Generate personal calendar"
