@@ -15,5 +15,14 @@
     "textOne": "Sieht so aus als hättest du unsere NOT FOUND Seite gefunden.",
     "textTwo": "Wenn du hier fertig bist, drück doch einfach den Button.",
     "button": "Zurück nach Hause"
+  },
+  "qa": {
+    "hi": "Hallo, wie ist dein Name?",
+    "save": "Speichern",
+    "minLength": "Dein Name muss mindestens ein Zeichen sein!",
+    "minDate": "Dein Geburtsdatum kann nur heute oder früher sein!",
+    "dateOfBirth": "Und wann ist dein Geburtstag?",
+    "generateCalendarDialog": "Großartig! Jetzt ist alles bereit, um deinen persönlichen Kalendar zu erstellen - klick den button und die Magie nimmt ihren Lauf.",
+    "generateCalendar": "Persönlichen Kalendar erstellen"
   }
 }

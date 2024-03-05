@@ -5,9 +5,9 @@
   >
     <div class="hero-content flex-col lg:flex-row-reverse">
       <img
-        src="/assets/autumn.png"
         alt="A cartoon image of autumn trees and a parkbench"
         class="max-w-sm rounded-lg shadow-2xl"
+        src="/assets/autumn.png"
       />
       <div class="text-center">
         <h1 class="text-5xl font-bold">Grim Mirth Daily</h1>
@@ -15,11 +15,12 @@
           <p class="text-xl">{{ 'welcome.card.one' | transloco }}</p>
           <p class="text-xl">
             <strong>{{ 'welcome.card.two' | transloco }}</strong
-            >&nbsp;<fa-icon [icon]="faCalendarDays" />?
+            >&nbsp;<fa-icon [icon]="faCalendarDays" />
+            ?
           </p>
           <p class="text-xl">{{ 'welcome.card.three' | transloco }}</p>
         </div>
-        <button class="btn btn-warning" (click)="navigateToQA()">
+        <button (click)="navigateToQA()" class="btn btn-warning">
           {{ 'welcome.card.button' | transloco }}
         </button>
       </div>
