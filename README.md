@@ -3,8 +3,8 @@
 
 # Roadmap
 
-PoC (x): Technical setup (frontend <-> backend communication) <br>
-V1 (*): TBD
+- [x] PoC: Technical setup (e. g. frontend &harr; backend communication) <br>
+- [ ] V1: TBD
 
 
 # Used Technologies
