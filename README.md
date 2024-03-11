@@ -1,5 +1,17 @@
-﻿# Grim Mirth Daily
 <img src="readme-assets/welcome_screen.png" alt="Grim Mirth Daily home screen">
+
+> [!NOTE]
+> This is my personal project. I do not accept Pull Requests! <br>
+> If you come across a bug, please feel free to create an issue and tag me in it - thank you :)
+
+# Grim Mirth Daily
+Ever wanted to have a calendar for every day in your life? <br>
+Maybe you even got a printout one pinned to your wall? <br>
+Time to level up with **Grim Mirth Daily**. <br>
+With this WebApp you will be able to track each day of your life, <br>
+get motivational quotes for every day, earn badges for achievements, <br>
+set important days for an extra dose of motivation and much more to come! <br>
+#SOON
 
 # Roadmap
 
