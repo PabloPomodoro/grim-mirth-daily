@@ -14,7 +14,7 @@ let books = [
 ];
 
 // Redirect root URL
-app.get('/', (c) => c.redirect('/books'));
+app.get('/', (c) => c.json('This is the entry point for the Grim Mirth Daily backend.'));
 
 // List all books
 app.get('/books', async (c) => {
