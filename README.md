@@ -1,9 +1,5 @@
 <img src="readme-assets/welcome_screen.png" alt="Grim Mirth Daily home screen">
 
-> [!NOTE]
-> This is my personal project. I do not accept Pull Requests! <br>
-> If you come across a bug, please feel free to create an issue and tag me in it - thank you :)
-
 # Grim Mirth Daily
 Ever wanted to have a calendar for every day in your life? <br>
 Maybe you even got a printout one pinned to your wall? <br>
@@ -14,10 +10,16 @@ set important days for an extra dose of motivation and much more to come! <br>
 #SOON
 
 # Roadmap
+> [!NOTE]
+> This is my personal project. I do not accept Pull Requests! <br>
+> If you come across a bug, please feel free to create an issue and tag me in it - thank you :)
 
+ <br>
+ 
 - [x] PoC: Technical setup (e. g. frontend &harr; backend communication) <br>
-- [ ] V1: TBD
-
+- [ ] V1: Standard QA dialog, standard calendar view, motivational pop up
+- [ ] V2: Register+Login, Badges, Own avatar
+- [ ] V3: TBD
 
 # Used Technologies
 
