@@ -1,0 +1,28 @@
+{
+  "welcome": {
+    "card": {
+      "one": "Du willst einen personalisierten",
+      "two": "dein Leben in Tagen",
+      "three": "Klick den Button und nach einem kurzen Quiz, kriegst du einen!",
+      "button": "Los geht's!"
+    },
+    "footer": "Das ist ein open source Projekt - check das Github Repo, mit 'nem Klick."
+  },
+  "notFound": {
+    "imageTitle": "Bild erstellt von catalyststuff",
+    "imageAlt": "Ein Astronaut der mit der Nummer 404 im Weltall schwebt",
+    "header": "GUT GEMACHT",
+    "textOne": "Sieht so aus als hättest du unsere NOT FOUND Seite gefunden.",
+    "textTwo": "Wenn du hier fertig bist, drück doch einfach den Button.",
+    "button": "Zurück nach Hause"
+  },
+  "qa": {
+    "hi": "Hallo, wie ist dein Name?",
+    "save": "Speichern",
+    "minLength": "Dein Name muss mindestens ein Zeichen sein!",
+    "minDate": "Dein Geburtsdatum kann nur heute oder früher sein!",
+    "dateOfBirth": "Und wann ist dein Geburtstag?",
+    "generateCalendarDialog": "Großartig! Jetzt ist alles bereit, um deinen persönlichen Kalendar zu erstellen - klick den button und die Magie nimmt ihren Lauf.",
+    "generateCalendar": "Persönlichen Kalendar erstellen"
+  }
+}
