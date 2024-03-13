@@ -1,9 +1,17 @@
 import {Hono} from 'https://deno.land/x/hono/mod.ts';
-import {cors} from 'https://deno.land/x/hono/middleware.ts';
+import {basicAuth, cors} from 'https://deno.land/x/hono/middleware.ts';
 
 const app = new Hono();
 
 app.use(cors({origin: 'https://www.grim-mirth-daily.com'}));
+
+app.use(
+  '/*',
+  basicAuth({
+    username: 'pablo',
+    password: '1337',
+  })
+);
 
 let books = [
   'Hermann Hesse - Siddhartha',
