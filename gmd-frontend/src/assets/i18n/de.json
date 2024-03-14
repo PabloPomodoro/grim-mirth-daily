@@ -2,9 +2,11 @@
   "welcome": {
     "card": {
       "one": "Du willst einen personalisierten",
-      "two": "dein Leben in Tagen",
+      "two": "dein Leben in Tagen ",
       "three": "Klick den Button und nach einem kurzen Quiz, kriegst du einen!",
-      "button": "Los geht's!"
+      "letsStartButton": "Los geht's!",
+      "registerButton": "Registrieren",
+      "tooltip": "Registrieren wird ab der Version 2 möglich sein."
     },
     "footer": "Das ist ein open source Projekt - check das Github Repo, mit 'nem Klick."
   },

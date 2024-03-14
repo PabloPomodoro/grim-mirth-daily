@@ -14,15 +14,26 @@
         <div class="py-6 ms-8 me-8 w-80">
           <p class="text-xl">{{ 'welcome.card.one' | transloco }}</p>
           <p class="text-xl">
-            <strong>{{ 'welcome.card.two' | transloco }}</strong
-            >&nbsp;<fa-icon [icon]="faCalendarDays" />
+            <strong>{{ 'welcome.card.two' | transloco }}</strong>
+            <fa-icon [icon]="faCalendarDays" />
             ?
           </p>
           <p class="text-xl">{{ 'welcome.card.three' | transloco }}</p>
         </div>
-        <button (click)="navigateToQA()" class="btn btn-warning">
-          {{ 'welcome.card.button' | transloco }}
-        </button>
+
+        <div class="space-x-2">
+          <div
+            class="tooltip tooltip-bottom"
+            data-tip="Registration will be available in version 2."
+          >
+            <button [disabled]="true" class="btn btn-warning">
+              {{ 'welcome.card.registerButton' | transloco }}
+            </button>
+          </div>
+          <button (click)="navigateToQA()" class="btn btn-warning">
+            {{ 'welcome.card.letsStartButton' | transloco }}
+          </button>
+        </div>
       </div>
     </div>
   </div>
