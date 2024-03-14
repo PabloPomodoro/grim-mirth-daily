@@ -23,7 +23,7 @@ set important days for an extra dose of motivation and much more to come! <br>
 
 # Used Technologies
 
-<p align="center">
+<p>
   <a href="https://angular.dev"><img src="readme-assets/angular.png" alt="Angular Logo" height="100" hspace="10"></a>
   <a href="https://deno.com"><img src="readme-assets/deno.png" alt="Deno Logo" height="100" hspace="10"></a>
   <a href="https://daisyui.com"><img src="readme-assets/daisyui.png" alt="DaisyUI Logo" height="100" hspace="10"></a>
