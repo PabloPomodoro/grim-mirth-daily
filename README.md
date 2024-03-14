@@ -28,8 +28,8 @@ set important days for an extra dose of motivation and much more to come! <br>
   <a href="https://deno.com"><img src="readme-assets/deno.png" alt="Deno Logo" height="100"></a>
   <a href="https://daisyui.com"><img src="readme-assets/daisyui.png" alt="DaisyUI Logo" height="100"></a>
   <a href="https://tailwindcss.com"><img src="readme-assets/tailwind.svg" alt="Tailwind Logo" height="100" width="95"></a>
-  <a href="https://hono.dev"><img src="readme-assets/hono.png" alt="Hono Logo" height="100"></a>
-  <a href="https://fontawesome.com"><img src="readme-assets/fontawesome.svg" alt="Font Awesome Logo" height="90"></a>
+  <a href="https://hono.dev"><img src="readme-assets/hono.png" alt="Hono Logo" height="100" hspace="5"></a>
+  <a href="https://fontawesome.com"><img src="readme-assets/fontawesome.svg" alt="Font Awesome Logo" height="90" hspace="5"></a>
    <a href="https://jsverse.github.io/transloco"><img src="readme-assets/transloco.svg" alt="Transloco Logo" height="90"></a>
 </p>
 
