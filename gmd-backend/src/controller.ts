@@ -1,5 +1,5 @@
 import {Hono} from 'https://deno.land/x/hono/mod.ts';
-import { basicAuth } from "https://deno.land/x/hono@v4.0.5/middleware.ts";
+import { basicAuth } from 'https://deno.land/x/hono/middleware.ts';
 import {
   accessToken
 } from 'https://deno.land/x/access_token@1.0.0/src/access_token.ts';
