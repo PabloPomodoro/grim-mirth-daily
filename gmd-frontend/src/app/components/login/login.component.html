@@ -3,15 +3,17 @@
     <div class="card-body items-center text-center border-2 rounded border-slate-950 border-solid">
       <h2 class="card-title">Login</h2>
       <label class="input input-bordered flex items-center gap-2">
-        <input type="text" class="grow" placeholder="Username" />
+        <input type="text" class="grow" placeholder="Username" [(ngModel)]="loginRequest.userName" />
       </label>
       <label class="input input-bordered flex items-center gap-2">
-        <input type="password" class="grow" value="password" />
+        <input type="password" class="grow" placeholder="*******" value="password" [(ngModel)]="loginRequest.password" />
       </label>
       <div class="card-actions justify-end">
-        <button class="btn btn-primary">Login</button>
-        <button class="btn btn-ghost">Cancel</button>
+        <button class="btn btn-primary" (click)="sendLoginRequest()">Login</button>
+        <button class="btn btn-ghost" (click)="clearInputs()">Cancel</button>
       </div>
     </div>
   </div>
+
+  token: {{ token }}
 </div>

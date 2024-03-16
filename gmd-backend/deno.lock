@@ -5,6 +5,9 @@
     "https://deno.land/x/hono/mod.ts": "https://deno.land/x/hono@v4.0.5/mod.ts"
   },
   "remote": {
+    "https://deno.land/x/access_token@1.0.0/src/access_token.ts": "1daa72a128767d9a39f437a790d45b2cf4b09660e708326d561d4d8e1b55a1c1",
+    "https://deno.land/x/access_token@1.0.0/src/base62.ts": "d0b399134d2f5372bda40c4836d515649b0c35e45f0e21c835a44abdb5fc41a0",
+    "https://deno.land/x/access_token@1.0.0/src/crc32.ts": "9ac539f33925b9c142fba0dacab28b37f41acd6addcb69157fbe7d27695afbe3",
     "https://deno.land/x/hono@v3.4.1/client/client.ts": "7a819af2aa9aabc746add4d01715fa37f83676fdf1b63fba1bbcd655b2d066a5",
     "https://deno.land/x/hono@v3.4.1/client/index.ts": "3ff4cf246f3543f827a85a2c84d66a025ac350ee927613629bda47e854bfb7ba",
     "https://deno.land/x/hono@v3.4.1/client/utils.ts": "053273c002963b549d38268a1b423ac8ca211a8028bdab1ed0b781a62aa5e661",

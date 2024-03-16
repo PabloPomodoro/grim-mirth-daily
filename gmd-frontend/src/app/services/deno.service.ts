@@ -1,6 +1,8 @@
 import {inject, Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
+// import {User} from '../models/user.model.ts';
+import {LoginRequest} from '../models/loginRequest.model';
 
 @Injectable({
   providedIn: 'root',
@@ -8,7 +10,7 @@ import {Observable} from 'rxjs';
 export class DenoService {
   private httpClient = inject(HttpClient);
 
-  getBooks(): Observable<string[]> {
-    return this.httpClient.get<string[]>('https://gmd-backend.deno.dev/books');
+  login(loginRequest: LoginRequest): Observable<string> {
+    return this.httpClient.post<string>('localhost:8000/login', loginRequest);
   }
 }
