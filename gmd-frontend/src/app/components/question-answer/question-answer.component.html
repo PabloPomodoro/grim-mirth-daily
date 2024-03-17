@@ -31,14 +31,14 @@
           type="text"
           [minlength]="1"
           [maxlength]="20"
-          (keydown.enter)="startNextStepLoadingFollowByChat(2)"
+          (keydown.enter)="startNextStepLoadingFollowByChat(2, 1000)"
           [(ngModel)]="user.name"
-          [disabled]="this.steps[3].valueOf()"
+          [disabled]="wasNameEntered"
         />
         <button
           class="btn btn-active"
           [disabled]="user.name.length < 1"
-          (click)="startNextStepLoadingFollowByChat(2)"
+          (click)="wasNameEntered = true; startNextStepLoadingFollowByChat(2, 1000)"
         >
           {{ 'qa.save' | transloco }}
         </button>
@@ -85,14 +85,14 @@
           id="dateOfBirth"
           class="input w-50 mt-2"
           type="date"
-          (keydown.enter)="startNextStepLoadingFollowByChat(5)"
+          (keydown.enter)="startNextStepLoadingFollowByChat(5, 1500)"
           [(ngModel)]="user.dateOfBirth"
-          [disabled]="this.steps[6].valueOf()"
+          [disabled]="wasDateOfBirthEntered"
         />
         <button
           class="btn btn-active"
           [disabled]="!validDateOfBirth(dateOfBirthInput.value)"
-          (click)="startNextStepLoadingFollowByChat(5)"
+          (click)="wasDateOfBirthEntered = true; startNextStepLoadingFollowByChat(5, 1500)"
         >
           {{ 'qa.save' | transloco }}
         </button>

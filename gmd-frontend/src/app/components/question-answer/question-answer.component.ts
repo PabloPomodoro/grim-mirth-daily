@@ -51,6 +51,8 @@ export class StartNextStepDirective implements OnInit {
 export class QuestionAnswerComponent {
   steps = Array.from({length: 7}, () => false);
   user: User;
+  wasNameEntered = false;
+  wasDateOfBirthEntered = false;
 
   constructor() {
     this.user = new User('', new Date());
@@ -66,13 +68,13 @@ export class QuestionAnswerComponent {
     }, 1000);
   }
 
-  startNextStepLoadingFollowByChat(id: number) {
+  startNextStepLoadingFollowByChat(id: number, timeOut: number) {
     if (this.steps.slice(id).every((item) => !item)) {
       this.steps[id] = true;
       setTimeout(() => {
         this.steps[id] = false;
         this.steps[id + 1] = true;
-      }, 1500);
+      }, timeOut);
     }
   }
 
