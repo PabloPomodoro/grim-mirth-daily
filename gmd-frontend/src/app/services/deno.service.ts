@@ -11,6 +11,6 @@ export class DenoService {
   private httpClient = inject(HttpClient);
 
   login(loginRequest: LoginRequest): Observable<string> {
-    return this.httpClient.post<string>('localhost:8000/login', loginRequest);
+    return this.httpClient.post<string>('http://localhost:8000/api/login', loginRequest);
   }
 }

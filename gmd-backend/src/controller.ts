@@ -22,7 +22,7 @@ api.post('/login', async (c) => {
   const jsonResponse = await c.req.json();
   const jsonResponseValue = jsonResponse.value;
 
-  return c.json(jsonResponseValue);
+  return c.json('bafab');
 });
 
 export { api };
