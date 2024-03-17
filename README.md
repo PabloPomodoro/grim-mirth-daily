@@ -1,4 +1,4 @@
-<img src="readme-assets/welcome_screen.png" alt="Grim Mirth Daily home screen">
+<img src="readme-assets/grim-reaper-header.png" alt="Grim Mirth Daily home screen">
 
 # Grim Mirth Daily
 Ever wanted to have a calendar for every day in your life? <br>
@@ -7,7 +7,6 @@ Time to level up with **Grim Mirth Daily**. <br>
 With this WebApp you will be able to track each day of your life, <br>
 get motivational quotes for every day, earn badges for achievements, <br>
 set important days for an extra dose of motivation and much more to come! <br>
-#SOON
 
 # Roadmap
 > [!NOTE]
