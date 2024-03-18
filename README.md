@@ -1,4 +1,4 @@
-<img src="readme-assets/grim-reaper-header.png" alt="Grim Mirth Daily home screen">
+<a href="https://grim-mirth-daily.com"><img src="readme-assets/grim-reaper-header.png" alt="Grim Mirth Daily home screen"></a>
 
 # Grim Mirth Daily
 Ever wanted to have a calendar for every day in your life? <br>
