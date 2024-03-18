@@ -1,7 +1,7 @@
 import {Component, inject} from '@angular/core';
 import {DenoService} from '../../services/deno.service';
-import {LoginRequest} from '../../models/loginRequest.model';
 import {FormsModule} from '@angular/forms';
+import {LoginRequest} from '../../models/login-request.model';
 
 @Component({
   selector: 'app-login',

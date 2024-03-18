@@ -1,11 +1,12 @@
 import {inject, Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
+import {LoginRequest} from '../models/login-request.model';
+
 // import {User} from '../models/user.model.ts';
-import {LoginRequest} from '../models/loginRequest.model';
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: 'root'
 })
 export class DenoService {
   private httpClient = inject(HttpClient);
