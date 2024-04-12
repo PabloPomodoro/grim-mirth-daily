@@ -4,5 +4,10 @@
   },
   "tasks": {
     "dev": "deno run --watch server.ts"
+  },
+  "fmt": {
+    "options": {
+      "singleQuote": true
+    }
   }
 }
