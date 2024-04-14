@@ -7,7 +7,7 @@ const login = new Hono();
 login.post('/', async (c) => {
   const loginRequest: LoginRequest = await c.req.json();
 
-  if (loginRequest.userName !== 'Pablo') {
+  if (loginRequest.email !== 'Pablo') {
     return c.notFound();
   }
   if (loginRequest.password !== '1337') {
