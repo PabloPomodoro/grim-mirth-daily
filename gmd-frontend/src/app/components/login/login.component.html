@@ -1,23 +1,45 @@
 <div class="h-[calc(100vh-64px)] flex justify-center">
   <div class="h-1/4 card w-96 mt-20">
-    <div class="card-body items-center text-center border-2 rounded border-slate-950 border-solid">
+    <div
+      class="card-body items-center text-center border-2 rounded border-slate-950 border-solid"
+    >
       <h2 class="card-title">Login</h2>
-      <label class="input input-bordered flex items-center gap-2">
-        <input type="text" class="grow" placeholder="Username" [(ngModel)]="loginRequest.userName" />
+      <label>
+        <input
+          type="text"
+          class="input input-bordered"
+          placeholder="e-mail"
+          [(ngModel)]="loginRequest.email"
+        />
+        @if (this.wrongEmail) {
+          <div class="label">
+            <span class="label-text-alt text-xs text-red-600">
+              wrong email
+            </span>
+          </div>
+        }
       </label>
-      <label class="input input-bordered flex items-center gap-2">
-        <input type="password" class="grow" placeholder="*******" value="password" [(ngModel)]="loginRequest.password" />
+      <label>
+        <input
+          type="password"
+          class="input input-bordered"
+          placeholder="*******"
+          value="password"
+          [(ngModel)]="loginRequest.password"
+        />
+        @if (this.wrongPassword) {
+          <div class="label">
+            <span class="label-text-alt text-xs text-red-600">
+              wrong password
+            </span>
+          </div>
+        }
       </label>
       <div class="card-actions justify-end">
-        <button class="btn btn-primary" (click)="sendLoginRequest()">Login</button>
-        <button class="btn btn-primary" (click)="getSuperSecretInfos()">SECRETS</button>
-        <button class="btn btn-primary" (click)="getQuote()">QUOTE</button>
-        <button class="btn btn-ghost" (click)="clearInputs()">Cancel</button>
+        <button class="btn btn-primary" (click)="sendLoginRequest()">
+          Login
+        </button>
       </div>
     </div>
   </div>
-
-  token: {{ token$ | async }} <br>
-  infos: {{ superSecretInfos$ | async  }} <br>
-  quote: {{ quote$ | async  }}
 </div>

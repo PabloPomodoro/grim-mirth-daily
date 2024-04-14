@@ -2,8 +2,7 @@ import {Component, inject} from '@angular/core';
 import {DenoService} from '../../services/deno.service';
 import {FormsModule} from '@angular/forms';
 import {LoginRequest} from '../../models/login-request.model';
-import {HttpHeaders} from '@angular/common/http';
-import {Observable} from 'rxjs';
+import {HttpErrorResponse} from '@angular/common/http';
 import {AsyncPipe} from '@angular/common';
 
 @Component({
@@ -16,44 +15,26 @@ import {AsyncPipe} from '@angular/common';
 export class LoginComponent {
   private denoService = inject(DenoService);
   loginRequest = new LoginRequest('', '');
-  token$!: Observable<string>;
-  superSecretInfos$!: Observable<string>;
-  quote$!: Observable<string>;
+  token = '';
+  wrongEmail = false;
+  wrongPassword = false;
 
   sendLoginRequest() {
-    this.token$ = this.denoService.login(this.loginRequest);
-  }
-
-  getSuperSecretInfos() {
-    this.token$.subscribe((token) => {
-      const authorization = 'Bearer ' + token;
-
-      const httpHeaders = new HttpHeaders({
-        Authorization: authorization,
-      });
-
-      this.superSecretInfos$ =
-        this.denoService.getSuperSecretInfos(httpHeaders);
+    this.denoService.login(this.loginRequest).subscribe({
+      next: (response) => {
+        this.token = response;
+      },
+      error: (error) => {
+        if (error instanceof HttpErrorResponse) {
+          if (error.status === 401) {
+            console.log(error)
+            this.wrongPassword = true;
+          }
+          if (error.status === 404) {
+            this.wrongEmail = true;
+          }
+        }
+      },
     });
-  }
-
-  getQuote() {
-    this.token$.subscribe((token) => {
-      const authorization = 'Bearer ' + token;
-
-      const httpHeaders = new HttpHeaders({
-        Authorization: authorization,
-      });
-
-      this.quote$ = this.denoService.getQuote(httpHeaders);
-    });
-  }
-
-  clearInputs() {
-    this.loginRequest.userName = '';
-    this.loginRequest.password = '';
-    this.token$ = new Observable<string>();
-    this.superSecretInfos$ = new Observable<string>();
-    this.quote$ = new Observable<string>();
   }
 }

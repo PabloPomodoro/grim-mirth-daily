@@ -14,12 +14,4 @@ export class DenoService {
   login(loginRequest: LoginRequest): Observable<string> {
     return this.httpClient.post<string>('http://localhost:8000/login', loginRequest);
   }
-
-  getSuperSecretInfos(httpHeaders: HttpHeaders): Observable<string> {
-    return this.httpClient.get<string>('http://localhost:8000/login/secret-data', { headers: httpHeaders });
-  }
-
-  getQuote(httpHeaders: HttpHeaders): Observable<string> {
-    return this.httpClient.get<string>('http://localhost:8000/quote', { headers: httpHeaders });
-  }
 }
