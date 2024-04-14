@@ -1,5 +1,5 @@
 import {inject, Injectable} from '@angular/core';
-import {HttpClient} from '@angular/common/http';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {LoginRequest} from '../models/login-request.model';
 
@@ -12,6 +12,14 @@ export class DenoService {
   private httpClient = inject(HttpClient);
 
   login(loginRequest: LoginRequest): Observable<string> {
-    return this.httpClient.post<string>('http://localhost:8000/api/login', loginRequest);
+    return this.httpClient.post<string>('http://localhost:8000/login', loginRequest);
+  }
+
+  getSuperSecretInfos(httpHeaders: HttpHeaders): Observable<string> {
+    return this.httpClient.get<string>('http://localhost:8000/login/secret-data', { headers: httpHeaders });
+  }
+
+  getQuote(httpHeaders: HttpHeaders): Observable<string> {
+    return this.httpClient.get<string>('http://localhost:8000/quote', { headers: httpHeaders });
   }
 }
