@@ -1,14 +1,24 @@
 import {accessToken, bearerAuth, Hono} from '../deps.ts';
+import {LoginRequest} from '../models/login-request.model.ts';
 
-const login = new Hono();
 const token = accessToken.generate('gmd');
+const login = new Hono();
 
-login.get('/secret-data', bearerAuth({token}), (c) => {
-  return c.json('SECRET!!!');
-});
+login.post('/', async (c) => {
+  const loginRequest: LoginRequest = await c.req.json();
 
-login.post('/login', (c) => {
+  if (loginRequest.userName !== 'Pablo') {
+    return c.notFound();
+  }
+  if (loginRequest.password !== '1337') {
+    return c.status(401);
+  }
+
   return c.json(token);
 });
 
-export {login};
+login.get('/secret-data', bearerAuth({token: token}), (c) => {
+  return c.json('SECRET!!!');
+});
+
+export {login, token};
