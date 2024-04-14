@@ -1,6 +1,7 @@
 {
   "version": "3",
   "redirects": {
+    "https://deno.land/x/hono/http-exception.ts": "https://deno.land/x/hono@v4.2.4/http-exception.ts",
     "https://deno.land/x/hono/middleware.ts": "https://deno.land/x/hono@v4.0.5/middleware.ts",
     "https://deno.land/x/hono/mod.ts": "https://deno.land/x/hono@v4.0.5/mod.ts"
   },
@@ -113,6 +114,7 @@
     "https://deno.land/x/hono@v4.0.5/utils/types.ts": "47426b7de99a75aa39305a21868c8d8e8d1316d24136a2d35fdf24e15f72970c",
     "https://deno.land/x/hono@v4.0.5/utils/url.ts": "d9d307a495e7dfc6e916fbcfa74c2d8d23e8e685bddc5e6ebc9c0f784345a01a",
     "https://deno.land/x/hono@v4.0.5/validator/index.ts": "6c986e8b91dcf857ecc8164a506ae8eea8665792a4ff7215471df669c632ae7c",
-    "https://deno.land/x/hono@v4.0.5/validator/validator.ts": "d80db93f84bce6406feac5d157cb97ee69242498d0dbec4568cb5df1a844bf0f"
+    "https://deno.land/x/hono@v4.0.5/validator/validator.ts": "d80db93f84bce6406feac5d157cb97ee69242498d0dbec4568cb5df1a844bf0f",
+    "https://deno.land/x/hono@v4.2.4/http-exception.ts": "cd387c6f7357db375ac3375f0346c6da80b46193b661881f660d6b15293fc086"
   }
 }

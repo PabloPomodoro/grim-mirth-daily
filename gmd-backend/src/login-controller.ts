@@ -1,4 +1,4 @@
-import {accessToken, bearerAuth, Hono} from '../deps.ts';
+import {accessToken, bearerAuth, Hono, HTTPException} from '../deps.ts';
 import {LoginRequest} from '../models/login-request.model.ts';
 
 const token = accessToken.generate('gmd');
@@ -11,7 +11,7 @@ login.post('/', async (c) => {
     return c.notFound();
   }
   if (loginRequest.password !== '1337') {
-    return c.status(401);
+    throw new HTTPException(401, { message: 'wrong password' })
   }
 
   return c.json(token);
@@ -19,6 +19,13 @@ login.post('/', async (c) => {
 
 login.get('/secret-data', bearerAuth({token: token}), (c) => {
   return c.json('SECRET!!!');
+});
+
+login.onError((err, c) => {
+  if (err instanceof HTTPException) {
+    return err.getResponse();
+  }
+  return c.text('invalid request', 500);
 });
 
 export {login, token};
