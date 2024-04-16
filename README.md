@@ -10,8 +10,8 @@ set important days for an extra dose of motivation and much more to come! <br>
 
 # Roadmap
 > [!NOTE]
-> This is my personal project. I do not accept Pull Requests! <br>
-> If you come across a bug, please feel free to create an issue and tag me in it - thank you :)
+> This is my personal project. I do not accept contributions! <br>
+> If you come across a bug, please feel free to [create an issue](https://github.com/PabloPomodoro/grim-mirth-daily/issues/new) and tag me in it - thank you :)
 
  <br>
  
