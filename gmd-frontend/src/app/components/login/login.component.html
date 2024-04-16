@@ -1,15 +1,23 @@
-<div class="h-[calc(100vh-64px)] flex justify-center">
-  <div class="h-1/4 card w-96 mt-20">
-    <div
-      class="card-body items-center text-center border-2 rounded border-slate-950 border-solid"
-    >
-      <h2 class="card-title">Login</h2>
-      <label>
+<div class="h-[calc(100vh-64px)] flex justify-center items-center">
+  <div class="card card-side bg-base-100 shadow-xl">
+    <figure>
+      <img
+        src="/assets/login-welcome.png"
+        alt="A man with open arms welcoming you"
+        title="image created by openclipart-vectors"
+      />
+    </figure>
+    <div class="card-body flex justify-center items-center text-center">
+      <h2 class="card-title text-3xl">Login</h2>
+      <label class="input input-bordered flex items-center gap-2">
+        <fa-icon [icon]="faEnvelope" class="opacity-70" />
         <input
           type="text"
-          class="input input-bordered"
+          class="grow"
           placeholder="e-mail"
+          (ngModelChange)="wrongEmail = false"
           [(ngModel)]="loginRequest.email"
+          (keydown.enter)="sendLoginRequest()"
         />
         @if (this.wrongEmail) {
           <div class="label">
@@ -19,13 +27,16 @@
           </div>
         }
       </label>
-      <label>
+      <label class="input input-bordered flex items-center gap-2">
+        <fa-icon [icon]="faKey" class="opacity-70" />
         <input
           type="password"
-          class="input input-bordered"
+          class="grow"
           placeholder="*******"
           value="password"
+          (ngModelChange)="wrongPassword = false"
           [(ngModel)]="loginRequest.password"
+          (keydown.enter)="sendLoginRequest()"
         />
         @if (this.wrongPassword) {
           <div class="label">
@@ -35,8 +46,8 @@
           </div>
         }
       </label>
-      <div class="card-actions justify-end">
-        <button class="btn btn-primary" (click)="sendLoginRequest()">
+      <div class="card-actions justify-center w-full">
+        <button class="btn btn-warning w-60" (click)="sendLoginRequest()">
           Login
         </button>
       </div>
