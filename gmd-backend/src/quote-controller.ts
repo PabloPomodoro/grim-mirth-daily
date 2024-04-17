@@ -26,7 +26,7 @@ quote.post('/create', bearerAuth({token: token}), async c => {
   return c.text('Quote ' + newQuote + ' created!');
 });
 
-quote.get('/:id', bearerAuth({token: token}), c => {
+quote.delete('/:id', bearerAuth({token: token}), c => {
   const id = c.req.param('id');
   const index = quotes.indexOf(quote => quote.id === id);
   quotes.splice(index, 1);
