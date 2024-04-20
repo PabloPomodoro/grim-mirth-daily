@@ -1,5 +1,5 @@
 <div class="h-[calc(100vh-64px)] flex justify-center items-center">
-  <div class="card card-side bg-base-100 shadow-xl">
+  <div class="card lg:card-side bg-base-100 shadow-xl">
     <figure>
       <img
         src="/assets/login-welcome.png"
@@ -9,7 +9,7 @@
     </figure>
     <div class="card-body flex justify-center items-center text-center">
       <h2 class="card-title text-3xl">Login</h2>
-      <label class="input input-bordered flex items-center gap-2">
+      <label class="flex items-center gap-2 input input-bordered">
         <fa-icon [icon]="faEnvelope" class="opacity-70" />
         <input
           type="text"
@@ -19,15 +19,14 @@
           [(ngModel)]="loginRequest.email"
           (keydown.enter)="sendLoginRequest()"
         />
-        @if (this.wrongEmail) {
-          <div class="label">
-            <span class="label-text-alt text-xs text-red-600">
-              wrong email
-            </span>
-          </div>
-        }
       </label>
-      <label class="input input-bordered flex items-center gap-2">
+      @if (this.wrongEmail) {
+        <div class="label">
+          <span class="label-text-alt text-xs text-red-600"> wrong email </span>
+        </div>
+      }
+
+      <label class="flex items-center gap-2 input input-bordered">
         <fa-icon [icon]="faKey" class="opacity-70" />
         <input
           type="password"
@@ -38,14 +37,15 @@
           [(ngModel)]="loginRequest.password"
           (keydown.enter)="sendLoginRequest()"
         />
-        @if (this.wrongPassword) {
-          <div class="label">
-            <span class="label-text-alt text-xs text-red-600">
-              wrong password
-            </span>
-          </div>
-        }
       </label>
+      @if (this.wrongPassword) {
+        <div class="label">
+          <span class="label-text-alt text-xs text-red-600">
+            wrong password
+          </span>
+        </div>
+      }
+
       <div class="card-actions justify-center w-full">
         <button class="btn btn-warning w-60" (click)="sendLoginRequest()">
           Login
