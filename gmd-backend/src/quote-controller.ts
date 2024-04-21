@@ -1,11 +1,13 @@
 import {bearerAuth, Hono} from '../deps.ts';
 import {token} from './login-controller.ts';
+import {Quote} from '../models/quote.model.ts';
 
 const quote = new Hono();
 
-const quotes = [
+const quotes: Quote[] = [
   {
     id: 1,
+    title: 'Sausage Party',
     text: "Wer and'ren eine Bratwurst brät, hat selbst ein Bratwurstbratgerät.",
   },
 ];
@@ -20,12 +22,14 @@ quote.get('/all', bearerAuth({token: token}), (c) => {
 });
 
 quote.post('/create', bearerAuth({token: token}), async (c) => {
+  const quoteRequest = await c.req.json() as Quote;
   const newQuote = {
     id: Math.max(...quotes.map((quote) => quote.id)) + 1,
-    text: await c.req.json(),
+    title: quoteRequest.title,
+    text: quoteRequest.text,
   };
   quotes.push(newQuote);
-  return c.text('Quote ' + newQuote + ' created!');
+  return c.text('Quote \"' + newQuote.title + '\" created!');
 });
 
 quote.delete('/:id', bearerAuth({token: token}), (c) => {
