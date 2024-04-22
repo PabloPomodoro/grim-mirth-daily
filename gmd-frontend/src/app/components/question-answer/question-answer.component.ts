@@ -55,7 +55,7 @@ export class QuestionAnswerComponent {
   wasDateOfBirthEntered = false;
 
   constructor() {
-    this.user = new User('', '', new Date());
+    this.user = new User('', '', '', new Date());
 
     setTimeout(() => {
       this.steps[0] = true;

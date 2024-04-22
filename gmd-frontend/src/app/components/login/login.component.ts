@@ -20,7 +20,6 @@ export class LoginComponent {
 
   private denoService = inject(DenoService);
   loginRequest = new LoginRequest('', '');
-  token = '';
   wrongEmail = false;
   wrongPassword = false;
 
@@ -30,12 +29,11 @@ export class LoginComponent {
 
     this.denoService.login(this.loginRequest).subscribe({
       next: (response) => {
-        this.token = response;
+        localStorage.setItem('GMD Token', response);
       },
       error: (error) => {
         if (error instanceof HttpErrorResponse) {
           if (error.status === 401) {
-            console.log(error);
             this.wrongPassword = true;
           }
           if (error.status === 404) {

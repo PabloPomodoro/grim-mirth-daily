@@ -1,16 +1,16 @@
 import {ApplicationConfig, isDevMode} from '@angular/core';
 import {provideRouter} from '@angular/router';
-
 import {routes} from './app.routes';
-import {provideHttpClient} from '@angular/common/http';
+import {provideHttpClient, withInterceptors} from '@angular/common/http';
 import {TranslocoHttpLoader} from './transloco-loader';
 import {provideTransloco} from '@ngneat/transloco';
+import {tokenHttpHeaderInterceptor} from './interceptors/token-http-header.interceptor';
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideRouter(routes),
     provideHttpClient(),
-    provideHttpClient(),
+    provideHttpClient(withInterceptors([tokenHttpHeaderInterceptor])),
     provideTransloco({
       config: {
         availableLangs: ['en', 'de'],
