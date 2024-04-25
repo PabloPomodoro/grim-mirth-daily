@@ -6,6 +6,7 @@ import {HttpErrorResponse} from '@angular/common/http';
 import {AsyncPipe} from '@angular/common';
 import {faEnvelope, faKey} from '@fortawesome/free-solid-svg-icons';
 import {FaIconComponent} from '@fortawesome/angular-fontawesome';
+import {LoginResponse} from '../../models/login-response.model';
 
 @Component({
   selector: 'app-login',
@@ -23,13 +24,14 @@ export class LoginComponent {
   wrongEmail = false;
   wrongPassword = false;
 
-  sendLoginRequest() {
+  sendLoginRequest(): void {
     this.wrongPassword = false;
     this.wrongEmail = false;
 
     this.denoService.login(this.loginRequest).subscribe({
-      next: (response) => {
-        localStorage.setItem('GMD Token', response);
+      next: (response: LoginResponse) => {
+        localStorage.setItem('GMD Token', response.token);
+        console.log(response);
       },
       error: (error) => {
         if (error instanceof HttpErrorResponse) {
@@ -41,6 +43,18 @@ export class LoginComponent {
           }
         }
       },
+    });
+  }
+
+  logout(): void {
+    this.denoService.logout();
+  }
+
+  testData = '';
+
+  getTestData() {
+    this.denoService.getTestData().subscribe((response) => {
+      this.testData = response;
     });
   }
 }

@@ -1,9 +1,7 @@
-export class User {
+export class UiUserModel {
   constructor(
-    public id: string,
     public name: string,
     public email: string,
-    public password: string,
     public dateOfBirth: Date,
   ) {}
 }

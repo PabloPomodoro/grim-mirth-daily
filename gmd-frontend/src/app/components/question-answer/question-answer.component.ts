@@ -8,7 +8,7 @@ import {
   Output,
 } from '@angular/core';
 import {TranslocoPipe} from '@ngneat/transloco';
-import {User} from '../../models/user.model';
+import {UiUser} from '../../models/ui-user.model';
 import {FormsModule} from '@angular/forms';
 
 @Directive({
@@ -50,12 +50,12 @@ export class StartNextStepDirective implements OnInit {
 })
 export class QuestionAnswerComponent {
   steps = Array.from({length: 7}, () => false);
-  user: User;
+  user: UiUser;
   wasNameEntered = false;
   wasDateOfBirthEntered = false;
 
   constructor() {
-    this.user = new User('', '', '', new Date());
+    this.user = new UiUser('', '', new Date());
 
     setTimeout(() => {
       this.steps[0] = true;
