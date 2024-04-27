@@ -16,14 +16,4 @@ export class DenoService {
       loginRequest,
     );
   }
-
-  logout(): void {
-    this.httpClient.post('http://localhost:8000/auth/logout', null).subscribe();
-  }
-
-  getTestData() {
-    return this.httpClient.get<string>(
-      'http://localhost:8000/auth/secret-data',
-    );
-  }
 }

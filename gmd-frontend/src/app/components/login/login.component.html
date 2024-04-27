@@ -22,7 +22,9 @@
       </label>
       @if (this.wrongEmail) {
         <div class="label">
-          <span class="label-text-alt text-xs text-red-600"> User not found </span>
+          <span class="label-text-alt text-xs text-red-600">
+            User not found
+          </span>
         </div>
       }
 
@@ -53,8 +55,4 @@
       </div>
     </div>
   </div>
-
-  <button class="btn" (click)="logout()">Log out</button>
-  <button class="btn" (click)="getTestData()">TEST</button>
-  TEST DATA : {{ testData }}
 </div>

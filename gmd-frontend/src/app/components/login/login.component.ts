@@ -45,16 +45,4 @@ export class LoginComponent {
       },
     });
   }
-
-  logout(): void {
-    this.denoService.logout();
-  }
-
-  testData = '';
-
-  getTestData() {
-    this.denoService.getTestData().subscribe((response) => {
-      this.testData = response;
-    });
-  }
 }
