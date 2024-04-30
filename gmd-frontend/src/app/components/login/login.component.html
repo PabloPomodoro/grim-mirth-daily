@@ -3,7 +3,7 @@
     <figure>
       <img
         src="/assets/login-welcome.png"
-        alt="A man with open arms welcoming you"
+        alt="{{ 'login.heroImageAlt' | transloco }}"
         title="image created by openclipart-vectors"
       />
     </figure>
@@ -23,7 +23,7 @@
       @if (this.wrongEmail) {
         <div class="label">
           <span class="label-text-alt text-xs text-red-600">
-            User not found
+            {{ 'login.userNotFound' | transloco}}
           </span>
         </div>
       }
@@ -43,7 +43,7 @@
       @if (this.wrongPassword) {
         <div class="label">
           <span class="label-text-alt text-xs text-red-600">
-            wrong password
+            {{ 'login.wrongPassword' | transloco}}
           </span>
         </div>
       }

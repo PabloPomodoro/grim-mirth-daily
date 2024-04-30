@@ -1,5 +1,6 @@
 {
   "welcome": {
+    "heroImageAlt": "A cartoon image of autumn trees and a park bench",
     "card": {
       "one": "Want to have a personalized",
       "two": "your life in days ",
@@ -26,5 +27,10 @@
     "dateOfBirth": "And what is you Date of Birth?",
     "generateCalendarDialog": "Great! Now everything is in place to generate your personal calendar - click the button below and the magic starts.",
     "generateCalendar": "Generate personal calendar"
+  },
+  "login" : {
+    "heroImageAlt": "A man with open arms welcoming you",
+    "userNotFound": "User not found.",
+    "wrongPassword": "Wrong password."
   }
 }

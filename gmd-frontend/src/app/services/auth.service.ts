@@ -7,7 +7,7 @@ import {LoginResponse} from '../models/login-response.model';
 @Injectable({
   providedIn: 'root',
 })
-export class DenoService {
+export class AuthService {
   private httpClient = inject(HttpClient);
 
   login(loginRequest: LoginRequest): Observable<LoginResponse> {
