@@ -31,7 +31,7 @@
           type="text"
           [minlength]="1"
           [maxlength]="20"
-          (keydown.enter)="startNextStepLoadingFollowByChat(2, 1000)"
+          (keydown.enter)="wasNameEntered = true; startNextStepLoadingFollowByChat(2, 1000)"
           [(ngModel)]="user.name"
           [disabled]="wasNameEntered"
         />
@@ -85,7 +85,7 @@
           id="dateOfBirth"
           class="input w-50 mt-2"
           type="date"
-          (keydown.enter)="startNextStepLoadingFollowByChat(5, 1500)"
+          (keydown.enter)="wasDateOfBirthEntered = true; startNextStepLoadingFollowByChat(5, 1500)"
           [(ngModel)]="user.dateOfBirth"
           [disabled]="wasDateOfBirthEntered"
         />
