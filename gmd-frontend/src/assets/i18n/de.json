@@ -28,7 +28,7 @@
     "generateCalendarDialog": "Großartig! Jetzt ist alles bereit, um deinen persönlichen Kalendar zu erstellen - klick den button und die Magie nimmt ihren Lauf.",
     "generateCalendar": "Persönlichen Kalendar erstellen"
   },
-  "login" : {
+  "login": {
     "heroImageAlt": "Ein Mann der einene mit offenen Armen empfängt",
     "userNotFound": "Benutzer existiert nicht.",
     "wrongPassword": "Falsches Passwort."

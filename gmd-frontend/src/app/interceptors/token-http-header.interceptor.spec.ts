@@ -1,10 +1,10 @@
-import { TestBed } from '@angular/core/testing';
-import { HttpInterceptorFn } from '@angular/common/http';
+import {TestBed} from '@angular/core/testing';
+import {HttpInterceptorFn} from '@angular/common/http';
 
-import { tokenHttpHeaderInterceptor } from './token-http-header.interceptor';
+import {tokenHttpHeaderInterceptor} from './token-http-header.interceptor';
 
 describe('tokenHttpHeaderInterceptor', () => {
-  const interceptor: HttpInterceptorFn = (req, next) => 
+  const interceptor: HttpInterceptorFn = (req, next) =>
     TestBed.runInInjectionContext(() => tokenHttpHeaderInterceptor(req, next));
 
   beforeEach(() => {

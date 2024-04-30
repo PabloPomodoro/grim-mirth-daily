@@ -28,7 +28,7 @@
     "generateCalendarDialog": "Great! Now everything is in place to generate your personal calendar - click the button below and the magic starts.",
     "generateCalendar": "Generate personal calendar"
   },
-  "login" : {
+  "login": {
     "heroImageAlt": "A man with open arms welcoming you",
     "userNotFound": "User not found.",
     "wrongPassword": "Wrong password."

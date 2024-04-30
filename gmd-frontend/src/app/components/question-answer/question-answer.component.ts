@@ -62,13 +62,13 @@ export class QuestionAnswerComponent {
     }, 1500);
   }
 
-  startCountdownToNextStep(nextStepNumber: number) {
+  startCountdownToNextStep(nextStepNumber: number): void {
     setTimeout(() => {
       this.steps[nextStepNumber] = true;
     }, 1000);
   }
 
-  startNextStepLoadingFollowByChat(id: number, timeOut: number) {
+  startNextStepLoadingFollowByChat(id: number, timeOut: number): void {
     if (this.steps.slice(id).every((item) => !item)) {
       this.steps[id] = true;
       setTimeout(() => {
@@ -78,7 +78,7 @@ export class QuestionAnswerComponent {
     }
   }
 
-  validDateOfBirth(value: string) {
+  validDateOfBirth(value: string): boolean {
     return value.length > 0 && new Date(this.user.dateOfBirth) <= new Date();
   }
 
