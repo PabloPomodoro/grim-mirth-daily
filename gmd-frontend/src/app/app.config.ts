@@ -4,7 +4,7 @@ import {routes} from './app.routes';
 import {provideHttpClient, withInterceptors} from '@angular/common/http';
 import {TranslocoHttpLoader} from './transloco-loader';
 import {provideTransloco} from '@ngneat/transloco';
-import {tokenHttpHeaderInterceptor} from './interceptors/token-http-header.interceptor';
+import {tokenHttpHeaderInterceptor} from './utils/interceptors/token-http-header.interceptor';
 
 export const appConfig: ApplicationConfig = {
   providers: [

@@ -1,40 +1,9 @@
-import {
-  Component,
-  Directive,
-  OnInit,
-  ElementRef,
-  EventEmitter,
-  Input,
-  Output,
-} from '@angular/core';
+import {Component} from '@angular/core';
 import {TranslocoPipe} from '@ngneat/transloco';
 import {UiUser} from '../../models/ui-user.model';
 import {FormsModule} from '@angular/forms';
-
-@Directive({
-  standalone: true,
-  selector: '[appAutoFocus]',
-})
-export class AutoFocusDirective implements OnInit {
-  constructor(private elementRef: ElementRef) {}
-
-  ngOnInit(): void {
-    this.elementRef.nativeElement.focus();
-  }
-}
-
-@Directive({
-  standalone: true,
-  selector: '[appStartNextStep]',
-})
-export class StartNextStepDirective implements OnInit {
-  @Input('appStartNextStep') nextStepId!: string;
-  @Output() startNextStepEvent = new EventEmitter();
-
-  ngOnInit(): void {
-    this.startNextStepEvent.emit(Number(this.nextStepId));
-  }
-}
+import {AutoFocusDirective} from '../../utils/directives/app-auto-focus.directive';
+import {StartNextStepDirective} from '../../utils/directives/app-start-next-step.directive';
 
 @Component({
   selector: 'app-question-answer',

@@ -91,7 +91,7 @@
           type="date"
           (keydown.enter)="
             wasDateOfBirthEntered = true;
-            startNextStepLoadingFollowByChat(5, 1500)
+            startNextStepLoadingFollowByChat(5, 2000)
           "
           [(ngModel)]="user.dateOfBirth"
           [disabled]="wasDateOfBirthEntered"
@@ -101,7 +101,7 @@
           [disabled]="!validDateOfBirth(dateOfBirthInput.value)"
           (click)="
             wasDateOfBirthEntered = true;
-            startNextStepLoadingFollowByChat(5, 1500)
+            startNextStepLoadingFollowByChat(5, 2000)
           "
         >
           {{ 'qa.save' | transloco }}
