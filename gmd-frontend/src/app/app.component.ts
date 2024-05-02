@@ -1,4 +1,4 @@
-import {Component, inject} from '@angular/core';
+import {Component, inject, OnInit} from '@angular/core';
 import {ActivatedRoute, Router, RouterOutlet} from '@angular/router';
 import {TranslocoService} from '@ngneat/transloco';
 
@@ -9,20 +9,54 @@ import {TranslocoService} from '@ngneat/transloco';
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   public title = 'GMD';
-  private isDefaultLanguage = true;
+  protected isDefaultLanguage = true;
   private languageService = inject(TranslocoService);
 
   private router = inject(Router);
   private route = inject(ActivatedRoute);
 
-  switchActiveLanguage() {
-    this.isDefaultLanguage = !this.isDefaultLanguage;
-    this.languageService.setActiveLang(this.isDefaultLanguage ? 'en' : 'de');
+  ngOnInit(): void {
+    const isDefaultLanguageSelected = localStorage.getItem(
+      'isDefaultLanguageSelected',
+    );
+    if (isDefaultLanguageSelected) {
+      this.languageService.setActiveLang(
+        this.getActiveLanguage(
+          this.isLocalStorageDefaultLanguageStringTrue(
+            isDefaultLanguageSelected,
+          ),
+        ),
+      );
+      this.isDefaultLanguage = this.isLocalStorageDefaultLanguageStringTrue(
+        isDefaultLanguageSelected,
+      );
+    }
   }
 
-  gotoHome() {
+  switchActiveLanguage(): void {
+    this.isDefaultLanguage = !this.isDefaultLanguage;
+    this.languageService.setActiveLang(
+      this.getActiveLanguage(this.isDefaultLanguage),
+    );
+    localStorage.setItem(
+      'isDefaultLanguageSelected',
+      JSON.stringify(this.isDefaultLanguage),
+    );
+  }
+
+  private getActiveLanguage(isDefaultLanguageActive: boolean): string {
+    return isDefaultLanguageActive ? 'en' : 'de';
+  }
+
+  private isLocalStorageDefaultLanguageStringTrue(
+    booleanString: string,
+  ): boolean {
+    return booleanString === 'true';
+  }
+
+  gotoHome(): void {
     this.router.navigate(['/welcome'], {relativeTo: this.route});
   }
 }

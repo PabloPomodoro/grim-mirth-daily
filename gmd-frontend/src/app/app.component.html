@@ -20,7 +20,12 @@
       alt="UK Flag"
       title="image created by Sudowoodo"
     />
-    <input type="checkbox" class="toggle" (click)="switchActiveLanguage()" />
+    <input
+      type="checkbox"
+      class="toggle"
+      [checked]="!isDefaultLanguage"
+      (click)="switchActiveLanguage()"
+    />
     <img
       src="assets/german-flag.png"
       class="w-6"
