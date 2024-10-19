@@ -7,18 +7,21 @@ import {
 import {Observable} from 'rxjs';
 
 export const tokenHttpHeaderInterceptor: HttpInterceptorFn = (
-  req: HttpRequest<any>,
+  req: HttpRequest<unknown>,
   next: HttpHandlerFn,
-): Observable<HttpEvent<any>> => {
-  const token = localStorage.getItem('GMD Token');
-  if (token) {
-    const cloned = req.clone({
-      setHeaders: {
-        authorization: 'Bearer ' + token,
-      },
-    });
-    return next(cloned);
-  } else {
+): Observable<HttpEvent<unknown>> => {
+
+  const token = sessionStorage.getItem('GMD Token');
+
+  if (!token) {
     return next(req);
   }
+
+  const cloned = req.clone({
+    setHeaders: {
+      authorization: 'Bearer ' + token,
+    },
+  });
+
+  return next(cloned);
 };

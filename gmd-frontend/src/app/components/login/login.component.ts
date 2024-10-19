@@ -34,8 +34,8 @@ export class LoginComponent {
 
     this.denoService.login(this.loginRequest).subscribe({
       next: (response: LoginResponse) => {
-        localStorage.setItem('GMD Token', response.token);
-        localStorage.setItem('UI User', JSON.stringify(response.uiUser));
+        sessionStorage.setItem('GMD Token', response.token);
+        sessionStorage.setItem('UI User', JSON.stringify(response.uiUser));
         this.router.navigate(['/welcome'], {relativeTo: this.route});
       },
       error: (error) => {
