@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {TranslocoPipe} from '@ngneat/transloco';
+import {TranslocoPipe} from '@jsverse/transloco';
 import {UiUser} from '../../models/ui-user.model';
 import {FormsModule} from '@angular/forms';
 import {AutoFocusDirective} from '../../utils/directives/app-auto-focus.directive';

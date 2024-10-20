@@ -7,7 +7,7 @@ import {AsyncPipe} from '@angular/common';
 import {faEnvelope, faKey} from '@fortawesome/free-solid-svg-icons';
 import {FaIconComponent} from '@fortawesome/angular-fontawesome';
 import {LoginResponse} from '../../models/login-response.model';
-import {TranslocoPipe} from '@ngneat/transloco';
+import {TranslocoPipe} from '@jsverse/transloco';
 import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({

@@ -1,6 +1,6 @@
 import {Component, inject} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
-import {TranslocoPipe} from '@ngneat/transloco';
+import {TranslocoPipe} from '@jsverse/transloco';
 
 @Component({
   selector: 'app-page-not-found',

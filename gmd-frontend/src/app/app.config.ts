@@ -3,7 +3,7 @@ import {provideRouter} from '@angular/router';
 import {routes} from './app.routes';
 import {provideHttpClient, withInterceptors} from '@angular/common/http';
 import {TranslocoHttpLoader} from './transloco-loader';
-import {provideTransloco} from '@ngneat/transloco';
+import {provideTransloco} from '@jsverse/transloco';
 import {tokenHttpHeaderInterceptor} from './utils/interceptors/token-http-header.interceptor';
 
 export const appConfig: ApplicationConfig = {
