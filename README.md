@@ -15,7 +15,7 @@ set important days for an extra dose of motivation and much more to come! <br>
 
  <br>
  
-- [x] PoC: Technical setup (e.g. frontend &harr; backend communication)
+- [x] PoC: Technical setup (e. g. frontend &harr; backend communication)
 - [ ] V1: Standard QA dialog, standard calendar view, motivational pop up
 - [ ] V2: Register+Login, Badges, Own avatar
 - [ ] V3: TBD
