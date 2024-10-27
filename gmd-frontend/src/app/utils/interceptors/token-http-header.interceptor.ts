@@ -10,7 +10,6 @@ export const tokenHttpHeaderInterceptor: HttpInterceptorFn = (
   req: HttpRequest<unknown>,
   next: HttpHandlerFn,
 ): Observable<HttpEvent<unknown>> => {
-
   const token = sessionStorage.getItem('GMD Token');
 
   if (!token) {
