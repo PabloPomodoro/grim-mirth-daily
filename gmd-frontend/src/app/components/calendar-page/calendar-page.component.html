@@ -1,13 +1,25 @@
-<div class="h-[calc(100vh-64px)] flex justify-center items-center">
-  <div class="h-full w-10/12 mt-36">
-    @for (row of rows; track row) {
-      <div class="flex justify-around mt-5">
-        @for (column of columns; track column) {
-          <span>
-            <input type="checkbox" checked="checked" class="{{getCheckboxClass()}}" />
-          </span>
+<div class="h-[calc(100vh-64px)] flex justify-center ">
+  <table class="h-full w-10/12 mt-6">
+    <caption class="text-5xl mb-12 mt-8 text-zinc-700">
+      <u>
+        {{ 'calendar-page.table-caption-start' | transloco }}
+        <i>{{ 'calendar-page.table-caption-cursive' | transloco }}</i>
+        {{ 'calendar-page.table-caption-end' | transloco }}
+      </u>
+    </caption>
+
+    @for (row of checkBoxes; track row) {
+      <tr class="flex justify-around mt-5">
+        @for (column of row; track column) {
+          <td>
+            <input
+              type="checkbox"
+              [ngClass]="column.cssClass"
+              [checked]="column.isChecked"
+            />
+          </td>
         }
-      </div>
+      </tr>
     }
-  </div>
+  </table>
 </div>

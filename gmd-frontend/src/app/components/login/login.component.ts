@@ -38,7 +38,7 @@ export class LoginComponent {
         sessionStorage.setItem('UI User', JSON.stringify(response.uiUser));
         this.router.navigate(['/welcome'], {relativeTo: this.route});
       },
-      error: (error) => {
+      error: (error: unknown): void => {
         if (error instanceof HttpErrorResponse) {
           if (error.status === 401) {
             this.wrongPassword = true;

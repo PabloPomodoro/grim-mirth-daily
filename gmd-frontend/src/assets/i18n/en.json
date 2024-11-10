@@ -32,5 +32,10 @@
     "heroImageAlt": "A man with open arms welcoming you",
     "userNotFound": "User not found.",
     "wrongPassword": "Wrong password."
+  },
+  "calendar-page":{
+    "table-caption-start": "WELCOME TO YOUR",
+    "table-caption-cursive": "»MY LIFE IN DAYS«",
+    "table-caption-end": "CALENDAR"
   }
 }
